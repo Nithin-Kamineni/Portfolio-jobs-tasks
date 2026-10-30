@@ -21,6 +21,12 @@ Ask, don't assume. One question at a time is fine; use your question tool if you
 5. **Run it**: `cd site && npm install && npm run db:migrate:local`, copy `site/.dev.vars.example` to `site/.dev.vars` and set `DEV_USER_EMAIL` to the owner's e-mail, then `npm run dev` and show them http://localhost:4321 (and /app if Tasks or Jobs are on). For Jobs, also `cd dashboard && npm install && npm start` (http://localhost:5178).
 6. **Deploy (only if they want it)**: walk them through `docs/deploy-cloudflare.md`. They create the accounts and paste secrets; you run the commands they approve.
 
+## Things the owner may say (any wording)
+- **"set up my project"**: First-time setup above.
+- **"turn on / turn off the <portfolio | tasks | jobs> part"**: change `MODULES` in `site/src/owner.config.ts`; when turning a part on, do that part's setup from its guide.
+- **"help me put my site online"**: walk them through `docs/deploy-cloudflare.md`, one step at a time (they create accounts and paste secrets; you run the commands they approve).
+- Everyday changes ("change the headline", "add my new project", "add a deadline …", "find new jobs"): use the part guides below.
+
 ## Repository layout
 ```
 site/        Astro + React website on a Cloudflare Worker. Public portfolio at /, private apps at /app/tasks and /app/jobs,
