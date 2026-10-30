@@ -1,0 +1,15 @@
+---
+// Where Sign out lands (Cloudflare's own logout page has no way back). Public, not indexed.
+import Base from '../layouts/Base.astro';
+import '../styles/workspace.css';
+---
+<Base title="Signed out" description="Signed out.">
+  <meta slot="head" name="robots" content="noindex, nofollow" />
+  <main class="ws-gate">
+    <span class="logo-chip">NK</span>
+    <h1>You're signed out.</h1>
+    <p>Your workspace session has ended on this browser.</p>
+    <a class="ws-gate-btn" href="/">Back to the portfolio</a>
+    <a href="/app/tasks/">Sign in again</a>
+  </main>
+</Base>

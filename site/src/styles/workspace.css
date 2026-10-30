@@ -1,0 +1,52 @@
+/* The private workspace bar (/app/*). Colours and fonts are the portfolio's tokens (styles.css), so
+   the theme button switches the portfolio and the workspace together. */
+:root { --ws-h: 56px; }
+
+.ws-bar {
+  position: fixed; inset: 0 0 auto; z-index: 1250; /* above MUI's app bar and drawer, below its dialogs */
+  height: var(--ws-h); padding: 0 20px;
+  display: flex; align-items: center; gap: 20px;
+  background: var(--bar-bg); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line);
+}
+.ws-brand { display: flex; align-items: center; gap: 10px; cursor: default; user-select: none; }
+.ws-brand .logo-chip { width: 30px; height: 30px; font-size: 11px; }
+.ws-brand-name { font: 600 15px var(--display); color: var(--text); letter-spacing: -0.01em; }
+
+.ws-tabs { display: flex; align-items: center; gap: 4px; height: 100%; }
+.ws-tabs a {
+  position: relative; display: flex; align-items: center; height: 100%; padding: 0 12px;
+  font: 500 14px var(--mono); color: var(--text-3); text-decoration: none; transition: color 0.2s;
+}
+.ws-tabs a:hover, .ws-tabs a:focus-visible { color: var(--text); outline: none; }
+.ws-tabs a[aria-current='page'] { color: var(--cyan); }
+.ws-tabs a[aria-current='page']::after {
+  content: ''; position: absolute; left: 12px; right: 12px; bottom: -1px; height: 2px; background: var(--cyan);
+}
+.ws-sep { width: 1px; height: 18px; background: var(--line-2); margin: 0 6px; }
+.ws-portfolio span { font-size: 12px; margin-left: 4px; }
+
+.ws-right { margin-left: auto; display: flex; align-items: center; gap: 14px; }
+.ws-who { font: 500 12px var(--mono); color: var(--muted); }
+.ws-signout { font: 500 13px var(--mono); color: var(--text-3); text-decoration: none; }
+.ws-signout:hover, .ws-signout:focus-visible { color: var(--cyan); outline: none; }
+
+.ws-page { padding-top: var(--ws-h); min-height: 100vh; }
+
+@media (max-width: 900px) { .ws-who { display: none; } }
+@media (max-width: 560px) {
+  .ws-bar { gap: 8px; padding: 0 12px; }
+  .ws-brand-name, .ws-portfolio span { display: none; }
+  .ws-tabs a { padding: 0 8px; font-size: 13px; }
+  .ws-tabs a[aria-current='page']::after { left: 8px; right: 8px; }
+  .ws-sep { margin: 0 2px; }
+  .ws-right { gap: 10px; }
+}
+
+/* sign-in (local preview) and signed-out pages */
+.ws-gate { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; padding: 24px; text-align: center; }
+.ws-gate h1 { margin: 6px 0 0; font: 600 32px var(--display); }
+.ws-gate p { margin: 0; color: var(--text-3); max-width: 420px; }
+.ws-gate a { font: 500 13px var(--mono); color: var(--text-3); text-decoration: none; }
+.ws-gate a:hover { color: var(--cyan); }
+.ws-gate .ws-gate-btn, .ws-gate-btn { display: inline-block; margin-top: 8px; padding: 10px 18px; border-radius: 10px; border: 1px solid var(--cyan); background: var(--cyan); color: var(--on-accent); font: 600 14px var(--sans); cursor: pointer; }
+.ws-gate .ws-gate-btn:hover { color: var(--on-accent); filter: brightness(1.08); }

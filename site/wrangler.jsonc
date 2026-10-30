@@ -1,0 +1,30 @@
+// Cloudflare Worker for the whole site: the static portfolio + the private /app and /api behind
+// Cloudflare Access. Deploy from site/: `npm run deploy`. Secrets never go here: `wrangler secret put …`
+// in Cloudflare (ACCESS_TEAM_DOMAIN, ACCESS_AUD, ALLOWED_EMAIL, ALLOWED_SERVICE_IDS) and the
+// git-ignored .dev.vars locally (see .dev.vars.example).
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "my-site",
+  // The site is served at https://my-site.<your-subdomain>.workers.dev. To use a free *.pages.dev address instead,
+  // set "workers_dev": false and deploy ../pages-proxy (see docs/deploy-cloudflare.md).
+  "workers_dev": true,
+  "preview_urls": false,
+  "main": "@astrojs/cloudflare/entrypoints/server",
+  "compatibility_date": "2026-10-01",
+  "compatibility_flags": ["nodejs_compat"],
+  "assets": {
+    "binding": "ASSETS",
+    "directory": "./dist"
+  },
+  "observability": { "enabled": true },
+  // The job dashboard's data (schema: migrations/). `wrangler d1 create jobwatcher` prints the id to
+  // paste below; until then the id is a placeholder that only local development accepts.
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "jobwatcher",
+      "database_id": "00000000-0000-0000-0000-000000000000",
+      "migrations_dir": "migrations"
+    }
+  ]
+}

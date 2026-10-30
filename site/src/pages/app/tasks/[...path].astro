@@ -1,0 +1,8 @@
+---
+import Workspace from '../../../layouts/Workspace.astro';
+import WorkspaceApp from '../../../apps/workspace/WorkspaceApp';
+import { MODULES } from '../../../owner.config';
+export const prerender = false;
+if (!MODULES.tasks) return new Response('Not found', { status: 404 });
+---
+<Workspace title="Tasks" current="tasks"><WorkspaceApp client:only="react" /></Workspace>

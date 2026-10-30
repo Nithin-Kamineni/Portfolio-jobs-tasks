@@ -1,0 +1,848 @@
+{
+  "topics": [
+    {
+      "id": "comb",
+      "title": "Combinational basics",
+      "x": 3,
+      "y": 0,
+      "blurb": "Vectors, muxes, priority logic and an ALU: one-cycle logic without latches."
+    },
+    {
+      "id": "seq",
+      "title": "Sequential basics",
+      "x": 3,
+      "y": 1,
+      "blurb": "Flops, resets, counters, shift registers and edge detection."
+    },
+    {
+      "id": "fsm",
+      "title": "FSMs",
+      "x": 2,
+      "y": 2,
+      "blurb": "Moore/Mealy, one-hot, sequence detectors and serial receivers."
+    },
+    {
+      "id": "systemc",
+      "title": "SystemC (side branch)",
+      "x": 5,
+      "y": 2,
+      "blurb": "Modules, processes, sc_fifo and a tiny TLM-2.0 model; under 4 hours."
+    },
+    {
+      "id": "hand",
+      "title": "Valid/ready & arbiters",
+      "x": 1,
+      "y": 3,
+      "blurb": "Handshakes, backpressure, skid buffers, fixed and round-robin arbitration."
+    },
+    {
+      "id": "mem",
+      "title": "Memories & sync FIFO",
+      "x": 4,
+      "y": 3,
+      "blurb": "Memory interfaces, synchronous FIFO with full/empty, flush."
+    },
+    {
+      "id": "pipe",
+      "title": "Pipelining & timing-aware RTL",
+      "x": 1,
+      "y": 4,
+      "blurb": "Pipelined valid/ready stages, registered outputs, short critical paths."
+    },
+    {
+      "id": "bus",
+      "title": "Bus protocols (APB, AXI-Lite)",
+      "x": 3,
+      "y": 4,
+      "blurb": "APB master/slave, then an AXI-Lite slave with five valid/ready channels."
+    },
+    {
+      "id": "cdc",
+      "title": "CDC, clocking & async FIFO",
+      "x": 5,
+      "y": 4,
+      "blurb": "The 3 CDC methods (2-flop sync, req/ack, Gray-pointer async FIFO), reset sync, Gray counters and a glitch-free clock mux."
+    },
+    {
+      "id": "riscv",
+      "title": "RISC-V core",
+      "x": 2,
+      "y": 5,
+      "blurb": "RV32I single-cycle core, then a 5-stage pipeline with forwarding and stalls."
+    },
+    {
+      "id": "verif",
+      "title": "SV verification basics",
+      "x": 4,
+      "y": 5,
+      "blurb": "Clocked testbenches, self-checking scoreboards and a few SVA properties."
+    }
+  ],
+  "edges": [
+    [
+      "comb",
+      "seq"
+    ],
+    [
+      "seq",
+      "fsm"
+    ],
+    [
+      "seq",
+      "systemc"
+    ],
+    [
+      "seq",
+      "mem"
+    ],
+    [
+      "fsm",
+      "hand"
+    ],
+    [
+      "fsm",
+      "bus"
+    ],
+    [
+      "hand",
+      "pipe"
+    ],
+    [
+      "hand",
+      "bus"
+    ],
+    [
+      "mem",
+      "cdc"
+    ],
+    [
+      "mem",
+      "riscv"
+    ],
+    [
+      "pipe",
+      "riscv"
+    ],
+    [
+      "mem",
+      "verif"
+    ],
+    [
+      "bus",
+      "verif"
+    ]
+  ],
+  "problems": [
+    {
+      "slug": "hdl-mux256",
+      "title": "256-to-1 4-bit mux (part-select)",
+      "topic": "comb",
+      "difficulty": "Easy",
+      "lang": "Verilog",
+      "url": "https://hdlbits.01xz.net/wiki/Mux256to1v",
+      "site": "HDLBits",
+      "est_min": 10,
+      "tip": "Use in[sel*4 +: 4]; know why +: needs a constant width.",
+      "unverified": false
+    },
+    {
+      "slug": "hdl-popcount255",
+      "title": "Population count of 255 bits",
+      "topic": "comb",
+      "difficulty": "Easy",
+      "lang": "Verilog",
+      "url": "https://hdlbits.01xz.net/wiki/Popcount255",
+      "site": "HDLBits",
+      "est_min": 10,
+      "tip": "A for-loop in always @(*) synthesizes to an adder tree.",
+      "unverified": false
+    },
+    {
+      "slug": "hdl-casez-priority",
+      "title": "Priority encoder with casez",
+      "topic": "comb",
+      "difficulty": "Easy",
+      "lang": "Verilog",
+      "url": "https://hdlbits.01xz.net/wiki/Always_casez",
+      "site": "HDLBits",
+      "est_min": 10,
+      "tip": "Order of casez items sets priority; add a default to avoid latches.",
+      "unverified": false
+    },
+    {
+      "slug": "hdl-bin2gray",
+      "title": "Binary to Gray code",
+      "topic": "comb",
+      "difficulty": "Easy",
+      "lang": "SystemVerilog",
+      "url": "https://quicksilicon.in/course/21daysofrtl/module/day-9",
+      "site": "QuickSilicon",
+      "est_min": 10,
+      "tip": "gray = bin ^ (bin >> 1); you reuse this in the async FIFO.",
+      "unverified": false
+    },
+    {
+      "slug": "hdl-simple-alu",
+      "title": "Simple ALU",
+      "topic": "comb",
+      "difficulty": "Easy",
+      "lang": "SystemVerilog",
+      "url": "https://quicksilicon.in/course/21daysofrtl/module/day-4",
+      "site": "QuickSilicon",
+      "est_min": 15,
+      "tip": "Write it as one case on opcode; reuse the style for RV32I.",
+      "unverified": false
+    },
+    {
+      "slug": "hdl-dff-async-reset",
+      "title": "8 DFFs with async reset",
+      "topic": "seq",
+      "difficulty": "Easy",
+      "lang": "Verilog",
+      "url": "https://hdlbits.01xz.net/wiki/Dff8ar",
+      "site": "HDLBits",
+      "est_min": 5,
+      "tip": "Know sync vs async reset sensitivity lists cold.",
+      "unverified": false
+    },
+    {
+      "slug": "hdl-edgecapture",
+      "title": "Edge capture (sticky falling edge)",
+      "topic": "seq",
+      "difficulty": "Medium",
+      "lang": "Verilog",
+      "url": "https://hdlbits.01xz.net/wiki/Edgecapture",
+      "site": "HDLBits",
+      "est_min": 15,
+      "tip": "Register the previous input; reset has priority over capture.",
+      "unverified": false
+    },
+    {
+      "unverified": false,
+      "slug": "hdl-edge-detector",
+      "title": "Rising and falling edge detector",
+      "topic": "seq",
+      "difficulty": "Easy",
+      "lang": "SystemVerilog",
+      "url": "https://quicksilicon.in/course/21daysofrtl/module/day-3",
+      "site": "QuickSilicon",
+      "est_min": 10,
+      "tip": "rise = a & ~a_q; fall = ~a & a_q. Sync the input first if it is asynchronous."
+    },
+    {
+      "slug": "hdl-countbcd",
+      "title": "4-digit BCD counter",
+      "topic": "seq",
+      "difficulty": "Medium",
+      "lang": "Verilog",
+      "url": "https://hdlbits.01xz.net/wiki/Countbcd",
+      "site": "HDLBits",
+      "est_min": 20,
+      "tip": "Digit i increments when all lower digits are 9.",
+      "unverified": false
+    },
+    {
+      "slug": "hdl-shift18",
+      "title": "64-bit arithmetic shift register",
+      "topic": "seq",
+      "difficulty": "Easy",
+      "lang": "Verilog",
+      "url": "https://hdlbits.01xz.net/wiki/Shift18",
+      "site": "HDLBits",
+      "est_min": 10,
+      "tip": "Arithmetic right shift replicates the sign bit.",
+      "unverified": false
+    },
+    {
+      "slug": "hdl-lfsr32",
+      "title": "32-bit Galois LFSR",
+      "topic": "seq",
+      "difficulty": "Medium",
+      "lang": "Verilog",
+      "url": "https://hdlbits.01xz.net/wiki/Lfsr32",
+      "site": "HDLBits",
+      "est_min": 15,
+      "tip": "Taps flip on the shifted-out bit; common BIST/scrambler question.",
+      "unverified": false
+    },
+    {
+      "unverified": false,
+      "slug": "hdl-debouncer",
+      "title": "Button debouncer (sync + stable counter)",
+      "topic": "seq",
+      "difficulty": "Easy",
+      "lang": "SystemVerilog",
+      "url": "https://zipcpu.com/blog/2017/08/04/debouncing.html",
+      "site": "ZipCPU",
+      "est_min": 25,
+      "tip": "No judge: EDA Playground. 2-flop sync first, then update the output only after N stable cycles."
+    },
+    {
+      "unverified": false,
+      "slug": "hdl-clk-div3",
+      "title": "Divide-by-3 clock with 50% duty (and odd N)",
+      "topic": "seq",
+      "difficulty": "Medium",
+      "lang": "SystemVerilog",
+      "url": "https://www.edaplayground.com/",
+      "site": "EDA Playground",
+      "est_min": 30,
+      "tip": "Posedge mod-3 counter + a negedge copy; OR them. Needs a 50% input clock.",
+      "guide_url": "https://asic-world.com/examples/verilog/divide_by_3.html",
+      "statement": "Divide clk by 3 with a 50% duty-cycle output. Use a mod-3 counter on posedge, a flop that samples its decode on negedge, and OR the two (1.5 high, 1.5 low). Then generalize to any odd N and say why a plain counter gives only 33% duty. Mention why real designs use a PLL/clock divider cell and constrain it with create_generated_clock."
+    },
+    {
+      "slug": "hdl-count-clock",
+      "title": "12-hour clock (hh:mm:ss, AM/PM)",
+      "topic": "seq",
+      "difficulty": "Hard",
+      "lang": "Verilog",
+      "url": "https://hdlbits.01xz.net/wiki/Count_clock",
+      "site": "HDLBits",
+      "est_min": 35,
+      "tip": "Watch the 12 -> 1 wrap and when PM toggles (11:59:59).",
+      "unverified": false
+    },
+    {
+      "slug": "hdl-fsm3onehot",
+      "title": "One-hot FSM next-state equations",
+      "topic": "fsm",
+      "difficulty": "Easy",
+      "lang": "Verilog",
+      "url": "https://hdlbits.01xz.net/wiki/Fsm3onehot",
+      "site": "HDLBits",
+      "est_min": 10,
+      "tip": "Derive each next-state bit from its incoming transitions.",
+      "unverified": false
+    },
+    {
+      "slug": "hdl-seq-detect-101",
+      "title": "Mealy sequence detector (101, overlapping)",
+      "topic": "fsm",
+      "difficulty": "Medium",
+      "lang": "Verilog",
+      "url": "https://hdlbits.01xz.net/wiki/Exams/ece241_2013_q8",
+      "site": "HDLBits",
+      "est_min": 15,
+      "tip": "Classic interview question: draw the diagram first, then code.",
+      "unverified": false
+    },
+    {
+      "unverified": false,
+      "slug": "hdl-div3-fsm",
+      "title": "Serial divisible-by-3 detector FSM",
+      "topic": "fsm",
+      "difficulty": "Medium",
+      "lang": "SystemVerilog",
+      "url": "https://www.edaplayground.com/",
+      "site": "EDA Playground",
+      "est_min": 20,
+      "tip": "States = remainder 0/1/2; next = (2*r + bit) mod 3.",
+      "statement": "Bits arrive MSB first, one per clock. Output 1 when the number seen so far is divisible by 3. Draw the 3-state remainder FSM (next = (2r + b) mod 3), code it, and test with 0b110 (6, yes) and 0b111 (7, no). Then: what changes for divisible by 5, or for LSB-first input?"
+    },
+    {
+      "slug": "hdl-fsm-hdlc",
+      "title": "HDLC bit stuffing / flag detector",
+      "topic": "fsm",
+      "difficulty": "Medium",
+      "lang": "Verilog",
+      "url": "https://hdlbits.01xz.net/wiki/Fsm_hdlc",
+      "site": "HDLBits",
+      "est_min": 25,
+      "tip": "Count consecutive ones with states; Moore outputs.",
+      "unverified": false
+    },
+    {
+      "slug": "hdl-fsm-serialdata",
+      "title": "Serial receiver (start, 8 data, stop)",
+      "topic": "fsm",
+      "difficulty": "Hard",
+      "lang": "Verilog",
+      "url": "https://hdlbits.01xz.net/wiki/Fsm_serialdata",
+      "site": "HDLBits",
+      "est_min": 30,
+      "tip": "FSM plus shift-register datapath: the UART RX pattern.",
+      "unverified": false
+    },
+    {
+      "slug": "hdl-review2015-fsm",
+      "title": "Timer start sequence FSM",
+      "topic": "fsm",
+      "difficulty": "Hard",
+      "lang": "Verilog",
+      "url": "https://hdlbits.01xz.net/wiki/Exams/review2015_fsm",
+      "site": "HDLBits",
+      "est_min": 30,
+      "tip": "Control FSM handshaking with a counter datapath (done/ack).",
+      "unverified": false
+    },
+    {
+      "slug": "hdl-fixed-arbiter",
+      "title": "Fixed-priority arbiter",
+      "topic": "hand",
+      "difficulty": "Easy",
+      "lang": "SystemVerilog",
+      "url": "https://quicksilicon.in/course/21daysofrtl/module/day-14",
+      "site": "QuickSilicon",
+      "est_min": 15,
+      "tip": "grant = req & ~(req - 1) isolates the lowest set bit.",
+      "unverified": false
+    },
+    {
+      "slug": "hdl-rr-arbiter",
+      "title": "Round-robin arbiter",
+      "topic": "hand",
+      "difficulty": "Medium",
+      "lang": "SystemVerilog",
+      "url": "https://quicksilicon.in/course/21daysofrtl/module/day-15",
+      "site": "QuickSilicon",
+      "est_min": 30,
+      "tip": "Mask requests above the last grant; fall back to unmasked.",
+      "unverified": false
+    },
+    {
+      "slug": "hdl-handling-traffic",
+      "title": "Handling Traffic (fair arbiter)",
+      "topic": "hand",
+      "difficulty": "Medium",
+      "lang": "SystemVerilog",
+      "url": "https://quicksilicon.in/course/rtl-design-ns/module/handling_traffic",
+      "site": "QuickSilicon",
+      "est_min": 40,
+      "tip": "Free problem: arbitration under valid/ready backpressure.",
+      "unverified": false
+    },
+    {
+      "slug": "hdl-skid-buffer",
+      "title": "Skid buffer (registered ready)",
+      "topic": "hand",
+      "difficulty": "Hard",
+      "lang": "SystemVerilog",
+      "url": "https://zipcpu.com/blog/2019/05/22/skidbuffer.html",
+      "site": "ZipCPU",
+      "est_min": 60,
+      "tip": "No judge: build in EDA Playground / Verilator. Transfer = valid && ready.",
+      "unverified": false
+    },
+    {
+      "slug": "hdl-mem-interface",
+      "title": "Simple memory interface",
+      "topic": "mem",
+      "difficulty": "Easy",
+      "lang": "SystemVerilog",
+      "url": "https://quicksilicon.in/course/21daysofrtl/module/day-17",
+      "site": "QuickSilicon",
+      "est_min": 20,
+      "tip": "Request/ready handshake in front of a register array.",
+      "unverified": false
+    },
+    {
+      "slug": "hdl-sync-fifo",
+      "title": "Synchronous FIFO",
+      "topic": "mem",
+      "difficulty": "Medium",
+      "lang": "SystemVerilog",
+      "url": "https://quicksilicon.in/course/21daysofrtl/module/day-19",
+      "site": "QuickSilicon",
+      "est_min": 30,
+      "tip": "Use an extra pointer bit to tell full from empty.",
+      "unverified": false
+    },
+    {
+      "slug": "hdl-fifo-flush",
+      "title": "FIFO flush",
+      "topic": "mem",
+      "difficulty": "Hard",
+      "lang": "SystemVerilog",
+      "url": "https://quicksilicon.in/course/rtl-design/module/fifo-flush",
+      "site": "QuickSilicon",
+      "est_min": 45,
+      "tip": "Free problem: flush must finish even if input never stops.",
+      "unverified": false
+    },
+    {
+      "slug": "hdl-pipeline-strategies",
+      "title": "Valid/ready pipeline stage (global vs local stall)",
+      "topic": "pipe",
+      "difficulty": "Medium",
+      "lang": "Verilog",
+      "url": "https://zipcpu.com/blog/2017/08/14/strategies-for-pipelining.html",
+      "site": "ZipCPU",
+      "est_min": 45,
+      "tip": "No judge: build a 3-stage pipe in EDA Playground; compare stall styles.",
+      "unverified": false
+    },
+    {
+      "slug": "hdl-fast-fifo",
+      "title": "Fast FIFO (timing-critical read)",
+      "topic": "pipe",
+      "difficulty": "Medium",
+      "lang": "SystemVerilog",
+      "url": "https://quicksilicon.in/course/rtl-design/module/fast-fifo",
+      "site": "QuickSilicon",
+      "est_min": 40,
+      "tip": "Free problem: read data must come straight from a flop.",
+      "unverified": false
+    },
+    {
+      "slug": "hdl-complex-packet-decoder",
+      "title": "Complex packet decoder",
+      "topic": "pipe",
+      "difficulty": "Hard",
+      "lang": "SystemVerilog",
+      "url": "https://quicksilicon.in/course/rtl-design/module/complex-packet-decoder",
+      "site": "QuickSilicon",
+      "est_min": 60,
+      "tip": "Free problem: keep logic depth short, register the outputs.",
+      "unverified": false
+    },
+    {
+      "slug": "hdl-apb-master",
+      "title": "APB master",
+      "topic": "bus",
+      "difficulty": "Easy",
+      "lang": "SystemVerilog",
+      "url": "https://quicksilicon.in/course/21daysofrtl/module/day-16",
+      "site": "QuickSilicon",
+      "est_min": 30,
+      "tip": "IDLE -> SETUP -> ACCESS; hold all signals until PREADY.",
+      "unverified": false
+    },
+    {
+      "slug": "hdl-apb-slave",
+      "title": "APB slave (register file)",
+      "topic": "bus",
+      "difficulty": "Medium",
+      "lang": "SystemVerilog",
+      "url": "https://quicksilicon.in/course/21daysofrtl/module/day-18",
+      "site": "QuickSilicon",
+      "est_min": 30,
+      "tip": "Act only when PSEL && PENABLE; insert wait states with PREADY.",
+      "unverified": false
+    },
+    {
+      "slug": "hdl-apb-system",
+      "title": "APB system (master + slaves)",
+      "topic": "bus",
+      "difficulty": "Medium",
+      "lang": "SystemVerilog",
+      "url": "https://quicksilicon.in/course/21daysofrtl/module/day-20",
+      "site": "QuickSilicon",
+      "est_min": 40,
+      "tip": "Address decode drives PSELx and muxes PRDATA back.",
+      "unverified": false
+    },
+    {
+      "slug": "hdl-events-to-apb",
+      "title": "Events to APB",
+      "topic": "bus",
+      "difficulty": "Medium",
+      "lang": "SystemVerilog",
+      "url": "https://quicksilicon.in/course/rtl-design/module/events-to-apb",
+      "site": "QuickSilicon",
+      "est_min": 45,
+      "tip": "Free problem: queue events and turn them into APB writes.",
+      "unverified": false
+    },
+    {
+      "slug": "hdl-axil-slave",
+      "title": "AXI-Lite slave (5 channels)",
+      "topic": "bus",
+      "difficulty": "Hard",
+      "lang": "SystemVerilog",
+      "url": "https://zipcpu.com/blog/2020/03/08/easyaxil.html",
+      "site": "ZipCPU",
+      "est_min": 120,
+      "tip": "No judge: build in EDA Playground / Verilator; AW and W arrive independently.",
+      "unverified": false
+    },
+    {
+      "slug": "hdl-two-flop-sync",
+      "title": "2-flop synchronizer + toggle pulse synchronizer",
+      "topic": "cdc",
+      "difficulty": "Medium",
+      "lang": "SystemVerilog",
+      "url": "https://web.archive.org/web/20240110182410/http://www.sunburst-design.com/papers/CummingsSNUG2008Boston_CDC.pdf",
+      "site": "Sunburst Design (archived)",
+      "est_min": 40,
+      "tip": "No judge: build in EDA Playground. Paper: Cummings, CDC design (SNUG 2008).",
+      "unverified": false
+    },
+    {
+      "unverified": false,
+      "slug": "hdl-gray-counter",
+      "title": "Gray-code counter + Gray-to-binary",
+      "topic": "cdc",
+      "difficulty": "Medium",
+      "lang": "SystemVerilog",
+      "url": "https://www.chipverify.com/verilog/verilog-gray-counter",
+      "site": "ChipVerify",
+      "est_min": 25,
+      "tip": "Keep a binary counter, register gray = bin ^ (bin >> 1); gray2bin is a prefix XOR from the MSB."
+    },
+    {
+      "slug": "hdl-reset-sync",
+      "title": "Reset synchronizer (async assert, sync deassert)",
+      "topic": "cdc",
+      "difficulty": "Easy",
+      "lang": "SystemVerilog",
+      "url": "https://web.archive.org/web/20240621013721/http://www.sunburst-design.com/papers/CummingsSNUG2003Boston_Resets.pdf",
+      "site": "Sunburst Design (archived)",
+      "est_min": 20,
+      "tip": "No judge: build in EDA Playground; a frequent interview question.",
+      "unverified": false
+    },
+    {
+      "slug": "hdl-req-ack-cdc",
+      "title": "Multi-bit CDC with req/ack handshake",
+      "topic": "cdc",
+      "difficulty": "Medium",
+      "lang": "SystemVerilog",
+      "url": "https://web.archive.org/web/20240110182410/http://www.sunburst-design.com/papers/CummingsSNUG2008Boston_CDC.pdf",
+      "site": "Sunburst Design (archived)",
+      "est_min": 45,
+      "tip": "No judge: build in EDA Playground; hold data stable until ack returns.",
+      "unverified": false
+    },
+    {
+      "unverified": false,
+      "slug": "hdl-glitch-free-clk-mux",
+      "title": "Glitch-free clock mux (async clocks)",
+      "topic": "cdc",
+      "difficulty": "Medium",
+      "lang": "SystemVerilog",
+      "url": "https://www.eetimes.com/techniques-to-make-clock-switching-glitch-free/",
+      "site": "EE Times",
+      "est_min": 40,
+      "tip": "No judge: EDA Playground. Cross-coupled enables, 2 negedge flops per clock; disable the old clock before enabling the new."
+    },
+    {
+      "slug": "hdl-async-fifo",
+      "title": "Asynchronous FIFO (Gray pointers)",
+      "topic": "cdc",
+      "difficulty": "Hard",
+      "lang": "SystemVerilog",
+      "url": "https://web.archive.org/web/20240304004420/http://www.sunburst-design.com/papers/CummingsSNUG2002SJ_FIFO1.pdf",
+      "site": "Sunburst Design (archived)",
+      "est_min": 120,
+      "tip": "No judge: build in EDA Playground / Verilator. Cummings FIFO1 is the reference.",
+      "unverified": false
+    },
+    {
+      "slug": "hdl-yarp-regfile",
+      "title": "RV32I register file (2R1W, x0 = 0)",
+      "topic": "riscv",
+      "difficulty": "Easy",
+      "lang": "SystemVerilog",
+      "url": "https://quicksilicon.in/course/riscv/module/yarp-regfile",
+      "site": "QuickSilicon",
+      "est_min": 20,
+      "tip": "Free problem: x0 reads zero, writes to x0 are ignored.",
+      "unverified": false
+    },
+    {
+      "slug": "hdl-yarp-fetch",
+      "title": "Instruction fetch unit",
+      "topic": "riscv",
+      "difficulty": "Easy",
+      "lang": "SystemVerilog",
+      "url": "https://quicksilicon.in/course/riscv/module/yarp-fetch",
+      "site": "QuickSilicon",
+      "est_min": 20,
+      "tip": "Free problem: PC register plus instruction-memory request.",
+      "unverified": false
+    },
+    {
+      "slug": "hdl-rv32i-decoder",
+      "title": "RV32I decoder + immediate generator",
+      "topic": "riscv",
+      "difficulty": "Medium",
+      "lang": "Verilog",
+      "url": "https://github.com/BrunoLevy/learn-fpga/blob/master/FemtoRV/TUTORIALS/FROM_BLINKER_TO_RISCV/README.md",
+      "site": "learn-fpga (GitHub)",
+      "est_min": 90,
+      "tip": "No judge: Verilator, early steps; know all five immediate formats.",
+      "unverified": false
+    },
+    {
+      "slug": "hdl-rv32i-single-cycle",
+      "title": "Single-cycle RV32I core",
+      "topic": "riscv",
+      "difficulty": "Hard",
+      "lang": "Verilog",
+      "url": "https://github.com/BrunoLevy/learn-fpga/blob/master/FemtoRV/TUTORIALS/FROM_BLINKER_TO_RISCV/README.md",
+      "site": "learn-fpga (GitHub)",
+      "est_min": 240,
+      "tip": "No judge: Verilator, finish the tutorial; run small programs end to end.",
+      "unverified": false
+    },
+    {
+      "slug": "hdl-rv32i-pipelined",
+      "title": "5-stage pipelined RV32I (forwarding, stalls, flush)",
+      "topic": "riscv",
+      "difficulty": "Hard",
+      "lang": "Verilog",
+      "url": "https://github.com/BrunoLevy/learn-fpga/blob/master/FemtoRV/TUTORIALS/FROM_BLINKER_TO_RISCV/PIPELINE.md",
+      "site": "learn-fpga (GitHub)",
+      "est_min": 360,
+      "tip": "No judge: Verilator. Load-use stall and branch flush are the interview core.",
+      "unverified": false
+    },
+    {
+      "slug": "hdl-tb-clock",
+      "title": "Testbench: clock generation",
+      "topic": "verif",
+      "difficulty": "Easy",
+      "lang": "Verilog",
+      "url": "https://hdlbits.01xz.net/wiki/Tb/clock",
+      "site": "HDLBits",
+      "est_min": 5,
+      "tip": "forever #5 clk = ~clk; mind the initial value.",
+      "unverified": false
+    },
+    {
+      "slug": "hdl-tb-tff",
+      "title": "Testbench: reset and drive a T flip-flop",
+      "topic": "verif",
+      "difficulty": "Easy",
+      "lang": "Verilog",
+      "url": "https://hdlbits.01xz.net/wiki/Tb/tff",
+      "site": "HDLBits",
+      "est_min": 10,
+      "tip": "Drive inputs away from the active clock edge.",
+      "unverified": false
+    },
+    {
+      "slug": "hdl-selfcheck-fifo-tb",
+      "title": "Self-checking FIFO testbench (queue model)",
+      "topic": "verif",
+      "difficulty": "Medium",
+      "lang": "SystemVerilog",
+      "url": "https://www.chipverify.com/systemverilog/systemverilog-testbench-example-1",
+      "site": "ChipVerify",
+      "est_min": 60,
+      "tip": "No judge: EDA Playground. Random push/pop checked against a SV queue model.",
+      "unverified": false
+    },
+    {
+      "slug": "hdl-sva-handshake",
+      "title": "SVA for valid/ready and FIFO",
+      "topic": "verif",
+      "difficulty": "Medium",
+      "lang": "SystemVerilog",
+      "url": "https://www.chipverify.com/systemverilog/systemverilog-concurrent-assertions",
+      "site": "ChipVerify",
+      "est_min": 45,
+      "tip": "Assert valid && !ready |=> valid && $stable(data); no push when full.",
+      "unverified": false
+    },
+    {
+      "unverified": false,
+      "slug": "hdl-covergroup-alu",
+      "title": "Functional coverage: covergroup for an ALU",
+      "topic": "verif",
+      "difficulty": "Easy",
+      "lang": "SystemVerilog",
+      "url": "https://www.chipverify.com/systemverilog/systemverilog-covergroup-coverpoint",
+      "site": "ChipVerify",
+      "est_min": 30,
+      "tip": "No judge: EDA Playground. Bins for opcodes and corner operands (0, max, min), cross opcode x corners."
+    },
+    {
+      "unverified": false,
+      "slug": "hdl-uvm-tb",
+      "title": "UVM testbench skeleton (agent, scoreboard)",
+      "topic": "verif",
+      "difficulty": "Medium",
+      "lang": "SystemVerilog",
+      "url": "https://www.chipverify.com/uvm/uvm-testbench-example-1",
+      "site": "ChipVerify",
+      "est_min": 90,
+      "tip": "No judge: EDA Playground (UVM 1.2). Type it yourself: seq_item, sequence, driver, monitor, agent, scoreboard, env, test."
+    },
+    {
+      "slug": "hdl-sc-module-signals",
+      "title": "Modules, ports and signals",
+      "topic": "systemc",
+      "difficulty": "Easy",
+      "lang": "SystemC",
+      "url": "https://www.edaplayground.com/",
+      "site": "EDA Playground",
+      "est_min": 25,
+      "tip": "EDA Playground: choose SystemC 2.3.3 as the language.",
+      "unverified": false,
+      "guide_url": "https://www.learnsystemc.com/basic/module",
+      "statement": "Write a half_adder SC_MODULE (sc_in<bool> a, b; sc_out<bool> sum, carry). In sc_main, bind it to sc_signals, apply all 4 input pairs with sc_start(1, SC_NS) between them, and print the outputs."
+    },
+    {
+      "slug": "hdl-sc-method-thread",
+      "title": "SC_METHOD vs SC_THREAD",
+      "topic": "systemc",
+      "difficulty": "Easy",
+      "lang": "SystemC",
+      "url": "https://www.edaplayground.com/",
+      "site": "EDA Playground",
+      "est_min": 30,
+      "tip": "METHOD is like always; THREAD is like initial with waits.",
+      "unverified": false,
+      "guide_url": "https://www.learnsystemc.com/basic/simu_process",
+      "statement": "Build a 4-bit counter as an SC_METHOD sensitive to clk.pos(), and a stimulus SC_THREAD that toggles enable using wait(). Explain why an SC_METHOD cannot call wait()."
+    },
+    {
+      "slug": "hdl-sc-clock-sensitivity",
+      "title": "Clocks, sensitivity and reset",
+      "topic": "systemc",
+      "difficulty": "Easy",
+      "lang": "SystemC",
+      "url": "https://www.edaplayground.com/",
+      "site": "EDA Playground",
+      "est_min": 30,
+      "tip": "Compare with your Verilog DFF line by line.",
+      "unverified": false,
+      "guide_url": "https://www.learnsystemc.com/basic/clock",
+      "statement": "Use sc_clock clk(\"clk\", 10, SC_NS). Write a DFF with active-low async reset (sensitive << clk.pos() << rst_n.neg()), use dont_initialize(), and trace the signals to a VCD."
+    },
+    {
+      "slug": "hdl-sc-fifo-prodcons",
+      "title": "sc_fifo producer/consumer",
+      "topic": "systemc",
+      "difficulty": "Easy",
+      "lang": "SystemC",
+      "url": "https://www.edaplayground.com/",
+      "site": "EDA Playground",
+      "est_min": 35,
+      "tip": "read/write block; nb_read/nb_write do not.",
+      "unverified": false,
+      "guide_url": "https://www.learnsystemc.com/basic/channel_fifo",
+      "statement": "A producer SC_THREAD writes 0..9 into sc_fifo<int>(4) every 1 ns; a consumer reads every 3 ns. Print timestamps and show where write() blocks when the FIFO is full."
+    },
+    {
+      "slug": "hdl-sc-tlm-btransport",
+      "title": "TLM-2.0 blocking b_transport memory",
+      "topic": "systemc",
+      "difficulty": "Medium",
+      "lang": "SystemC",
+      "url": "https://www.edaplayground.com/",
+      "site": "EDA Playground",
+      "est_min": 60,
+      "tip": "Generic payload plus b_transport is the whole loosely-timed model.",
+      "unverified": false,
+      "guide_url": "https://www.doulos.com/knowhow/systemc/tlm-20/tutorial-1-sockets-generic-payload-blocking-transport/",
+      "statement": "An initiator (simple_initiator_socket) writes then reads 16 words to a target memory (simple_target_socket). The target decodes command/address/data from the generic payload, sets the response status, and rejects out-of-range addresses."
+    },
+    {
+      "slug": "hdl-sc-timing-annotation",
+      "title": "Timing annotation (loosely timed)",
+      "topic": "systemc",
+      "difficulty": "Medium",
+      "lang": "SystemC",
+      "url": "https://www.edaplayground.com/",
+      "site": "EDA Playground",
+      "est_min": 35,
+      "tip": "Annotate delay in the target instead of calling wait() there.",
+      "unverified": false,
+      "guide_url": "https://www.learnsystemc.com/basic/time",
+      "statement": "Extend the TLM target: add 10 ns to delay for reads and 20 ns for writes. In the initiator, call wait(delay) after each b_transport and print sc_time_stamp(). Compare total time for 16 writes vs 16 reads."
+    }
+  ]
+}

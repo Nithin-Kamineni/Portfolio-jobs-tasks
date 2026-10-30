@@ -1,0 +1,2089 @@
+{
+ "meta": {
+  "count": 10,
+  "next_cursor": null,
+  "note": "Recorded from api.openalex.org on 2026-09-30 (NVIDIA + AMD, hardware subfields, since 2024), trimmed to a few works."
+ },
+ "results": [
+  {
+   "id": "https://openalex.org/W4401211711",
+   "doi": "https://doi.org/10.1109/isca59077.2024.00068",
+   "title": "Realizing the AMD Exascale Heterogeneous Processor Vision : Industry Product",
+   "publication_year": 2024,
+   "locations": [
+    {
+     "source": null,
+     "raw_source_name": "2024 ACM/IEEE 51st Annual International Symposium on Computer Architecture (ISCA)",
+     "pdf_url": null,
+     "landing_page_url": "https://doi.org/10.1109/isca59077.2024.00068"
+    }
+   ],
+   "best_oa_location": null,
+   "authorships": [
+    {
+     "author_position": "first",
+     "author": {
+      "id": null,
+      "display_name": "Alan Smith"
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I4210137977",
+       "display_name": "Advanced Micro Devices (United States)",
+       "country_code": "US"
+      }
+     ],
+     "raw_affiliation_strings": [
+      "Advanced Micro Devices, Inc"
+     ],
+     "countries": [
+      "US"
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5102835155",
+      "display_name": "Gabriel H. Loh"
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I4210137977",
+       "display_name": "Advanced Micro Devices (United States)",
+       "country_code": "US"
+      }
+     ],
+     "raw_affiliation_strings": [
+      "Advanced Micro Devices, Inc"
+     ],
+     "countries": [
+      "US"
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5103196891",
+      "display_name": "Michael Schulte"
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I4210137977",
+       "display_name": "Advanced Micro Devices (United States)",
+       "country_code": "US"
+      }
+     ],
+     "raw_affiliation_strings": [
+      "Advanced Micro Devices, Inc"
+     ],
+     "countries": [
+      "US"
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5006421293",
+      "display_name": "Mike Ignatowski"
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I4210137977",
+       "display_name": "Advanced Micro Devices (United States)",
+       "country_code": "US"
+      }
+     ],
+     "raw_affiliation_strings": [
+      "Advanced Micro Devices, Inc"
+     ],
+     "countries": [
+      "US"
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5075023469",
+      "display_name": "Samuel Naffziger"
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I4210137977",
+       "display_name": "Advanced Micro Devices (United States)",
+       "country_code": "US"
+      }
+     ],
+     "raw_affiliation_strings": [
+      "Advanced Micro Devices, Inc"
+     ],
+     "countries": [
+      "US"
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5085469786",
+      "display_name": "Mike Mantor"
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I4210137977",
+       "display_name": "Advanced Micro Devices (United States)",
+       "country_code": "US"
+      }
+     ],
+     "raw_affiliation_strings": [
+      "Advanced Micro Devices, Inc"
+     ],
+     "countries": [
+      "US"
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5106164437",
+      "display_name": "Mark Fowler Nathan Kalyanasundharam"
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I4210137977",
+       "display_name": "Advanced Micro Devices (United States)",
+       "country_code": "US"
+      }
+     ],
+     "raw_affiliation_strings": [
+      "Advanced Micro Devices, Inc"
+     ],
+     "countries": [
+      "US"
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5106247378",
+      "display_name": "Vamsi Alla"
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I4210137977",
+       "display_name": "Advanced Micro Devices (United States)",
+       "country_code": "US"
+      }
+     ],
+     "raw_affiliation_strings": [
+      "Advanced Micro Devices, Inc"
+     ],
+     "countries": [
+      "US"
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5038263077",
+      "display_name": "Nicholas P. Malaya"
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I4210137977",
+       "display_name": "Advanced Micro Devices (United States)",
+       "country_code": "US"
+      }
+     ],
+     "raw_affiliation_strings": [
+      "Advanced Micro Devices, Inc"
+     ],
+     "countries": [
+      "US"
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5034110574",
+      "display_name": "Joseph L. Greathouse"
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I4210137977",
+       "display_name": "Advanced Micro Devices (United States)",
+       "country_code": "US"
+      }
+     ],
+     "raw_affiliation_strings": [
+      "Advanced Micro Devices, Inc"
+     ],
+     "countries": [
+      "US"
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5007498296",
+      "display_name": "Eric A. Chapman"
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I4210137977",
+       "display_name": "Advanced Micro Devices (United States)",
+       "country_code": "US"
+      }
+     ],
+     "raw_affiliation_strings": [
+      "Advanced Micro Devices, Inc"
+     ],
+     "countries": [
+      "US"
+     ]
+    },
+    {
+     "author_position": "last",
+     "author": {
+      "id": "https://openalex.org/A5025987999",
+      "display_name": "Raja Swaminathan"
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I4210137977",
+       "display_name": "Advanced Micro Devices (United States)",
+       "country_code": "US"
+      }
+     ],
+     "raw_affiliation_strings": [
+      "Advanced Micro Devices, Inc"
+     ],
+     "countries": [
+      "US"
+     ]
+    }
+   ],
+   "primary_topic": null,
+   "keywords": []
+  },
+  {
+   "id": "https://openalex.org/W4401212149",
+   "doi": "https://doi.org/10.1109/isca59077.2024.00045",
+   "title": "Harpocrates: Breaking the Silence of CPU Faults through Hardware-in-the-Loop Program Generation",
+   "publication_year": 2024,
+   "locations": [
+    {
+     "source": null,
+     "raw_source_name": "2024 ACM/IEEE 51st Annual International Symposium on Computer Architecture (ISCA)",
+     "pdf_url": null,
+     "landing_page_url": "https://doi.org/10.1109/isca59077.2024.00045"
+    },
+    {
+     "source": {
+      "display_name": "Zenodo (CERN European Organization for Nuclear Research)"
+     },
+     "raw_source_name": null,
+     "pdf_url": null,
+     "landing_page_url": "https://doi.org/10.5281/zenodo.12553098"
+    }
+   ],
+   "best_oa_location": {
+    "pdf_url": null
+   },
+   "authorships": [
+    {
+     "author_position": "first",
+     "author": {
+      "id": "https://openalex.org/A5099516374",
+      "display_name": "Nikos Karystinos"
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I200777214",
+       "display_name": "National and Kapodistrian University of Athens",
+       "country_code": "GR"
+      }
+     ],
+     "raw_affiliation_strings": [
+      "University of Athens,Computer Architecture Lab,Department of Informatics and Telecomm,Greece"
+     ],
+     "countries": [
+      "GR"
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5058376544",
+      "display_name": "Odysseas Chatzopoulos"
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I200777214",
+       "display_name": "National and Kapodistrian University of Athens",
+       "country_code": "GR"
+      }
+     ],
+     "raw_affiliation_strings": [
+      "University of Athens,Computer Architecture Lab,Department of Informatics and Telecomm,Greece"
+     ],
+     "countries": [
+      "GR"
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5054152546",
+      "display_name": "George-Marios Fragkoulis"
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I200777214",
+       "display_name": "National and Kapodistrian University of Athens",
+       "country_code": "GR"
+      }
+     ],
+     "raw_affiliation_strings": [
+      "University of Athens,Computer Architecture Lab,Department of Informatics and Telecomm,Greece"
+     ],
+     "countries": [
+      "GR"
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5036767968",
+      "display_name": "George N. Papadimitriou"
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I200777214",
+       "display_name": "National and Kapodistrian University of Athens",
+       "country_code": "GR"
+      }
+     ],
+     "raw_affiliation_strings": [
+      "University of Athens,Computer Architecture Lab,Department of Informatics and Telecomm,Greece"
+     ],
+     "countries": [
+      "GR"
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5007119083",
+      "display_name": "Dimitris Gizopoulos"
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I200777214",
+       "display_name": "National and Kapodistrian University of Athens",
+       "country_code": "GR"
+      }
+     ],
+     "raw_affiliation_strings": [
+      "University of Athens,Computer Architecture Lab,Department of Informatics and Telecomm,Greece"
+     ],
+     "countries": [
+      "GR"
+     ]
+    },
+    {
+     "author_position": "last",
+     "author": {
+      "id": "https://openalex.org/A5078748445",
+      "display_name": "Sudhanva Gurumurthi"
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I4210137977",
+       "display_name": "Advanced Micro Devices (United States)",
+       "country_code": "US"
+      }
+     ],
+     "raw_affiliation_strings": [
+      "Advanced Micro Devices, Inc,RAS Architecture,Austin,Texas,USA"
+     ],
+     "countries": [
+      "US"
+     ]
+    }
+   ],
+   "primary_topic": null,
+   "keywords": []
+  },
+  {
+   "id": "https://openalex.org/W4392746141",
+   "doi": "https://doi.org/10.1109/isscc49657.2024.10454441",
+   "title": "11.1 AMD InstinctTM MI300 Series Modular Chiplet Package – HPC and AI Accelerator for Exa-Class Systems",
+   "publication_year": 2024,
+   "locations": [
+    {
+     "source": null,
+     "raw_source_name": "2024 IEEE International Solid-State Circuits Conference (ISSCC)",
+     "pdf_url": null,
+     "landing_page_url": "https://doi.org/10.1109/isscc49657.2024.10454441"
+    }
+   ],
+   "best_oa_location": null,
+   "authorships": [
+    {
+     "author_position": "first",
+     "author": {
+      "id": null,
+      "display_name": "Alan Smith"
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I4210137977",
+       "display_name": "Advanced Micro Devices (United States)",
+       "country_code": "US"
+      }
+     ],
+     "raw_affiliation_strings": [
+      "AMD,Austin,TX",
+      "AMD, Austin, TX"
+     ],
+     "countries": [
+      "US"
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5007498296",
+      "display_name": "Eric A. Chapman"
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I4210137977",
+       "display_name": "Advanced Micro Devices (United States)",
+       "country_code": "US"
+      }
+     ],
+     "raw_affiliation_strings": [
+      "AMD,Austin,TX",
+      "AMD, Austin, TX"
+     ],
+     "countries": [
+      "US"
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": null,
+      "display_name": "Chintan Patel"
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I4210137977",
+       "display_name": "Advanced Micro Devices (United States)",
+       "country_code": "US"
+      }
+     ],
+     "raw_affiliation_strings": [
+      "AMD,Austin,TX",
+      "AMD, Austin, TX"
+     ],
+     "countries": [
+      "US"
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5025987999",
+      "display_name": "Raja Swaminathan"
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I4210137977",
+       "display_name": "Advanced Micro Devices (United States)",
+       "country_code": "US"
+      }
+     ],
+     "raw_affiliation_strings": [
+      "AMD,Austin,TX",
+      "AMD, Austin, TX"
+     ],
+     "countries": [
+      "US"
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5053942589",
+      "display_name": "John Wuu"
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I4210137977",
+       "display_name": "Advanced Micro Devices (United States)",
+       "country_code": "US"
+      }
+     ],
+     "raw_affiliation_strings": [
+      "AMD,Fort Collins,CO",
+      "AMD, Fort Collins, CO"
+     ],
+     "countries": [
+      "US"
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5101316581",
+      "display_name": "Tyrone Huang"
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I1311921367",
+       "display_name": "Advanced Micro Devices (Canada)",
+       "country_code": "CA"
+      }
+     ],
+     "raw_affiliation_strings": [
+      "AMD,Markham,Canada",
+      "AMD, Markham, Canada"
+     ],
+     "countries": [
+      "CA"
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5062991441",
+      "display_name": "Wonjun Jung"
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I1311921367",
+       "display_name": "Advanced Micro Devices (Canada)",
+       "country_code": "CA"
+      }
+     ],
+     "raw_affiliation_strings": [
+      "AMD,Markham,Canada",
+      "AMD, Markham, Canada"
+     ],
+     "countries": [
+      "CA"
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5023212091",
+      "display_name": "Alexander Kaganov"
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I1311921367",
+       "display_name": "Advanced Micro Devices (Canada)",
+       "country_code": "CA"
+      }
+     ],
+     "raw_affiliation_strings": [
+      "AMD,Markham,Canada",
+      "AMD, Markham, Canada"
+     ],
+     "countries": [
+      "CA"
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5044836561",
+      "display_name": "Hugh C. McIntyre"
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I4210137977",
+       "display_name": "Advanced Micro Devices (United States)",
+       "country_code": "US"
+      }
+     ],
+     "raw_affiliation_strings": [
+      "AMD,Santa Clara,CA",
+      "AMD, Santa Clara, CA"
+     ],
+     "countries": [
+      "US"
+     ]
+    },
+    {
+     "author_position": "last",
+     "author": {
+      "id": "https://openalex.org/A5013605183",
+      "display_name": "Ramon Mangaser"
+     },
+     "institutions": [],
+     "raw_affiliation_strings": [
+      "AMD,Boxborough,MA",
+      "AMD, Boxborough, MA"
+     ],
+     "countries": []
+    }
+   ],
+   "primary_topic": null,
+   "keywords": []
+  },
+  {
+   "id": "https://openalex.org/W4404132991",
+   "doi": "https://doi.org/10.1145/3649329.3656530",
+   "title": "DGR: Differentiable Global Router",
+   "publication_year": 2024,
+   "locations": [
+    {
+     "source": null,
+     "raw_source_name": "Proceedings of the 61st ACM/IEEE Design Automation Conference",
+     "pdf_url": null,
+     "landing_page_url": "https://doi.org/10.1145/3649329.3656530"
+    }
+   ],
+   "best_oa_location": null,
+   "authorships": [
+    {
+     "author_position": "first",
+     "author": {
+      "id": "https://openalex.org/A5100318079",
+      "display_name": "Wei Li"
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I74973139",
+       "display_name": "Carnegie Mellon University",
+       "country_code": "US"
+      }
+     ],
+     "raw_affiliation_strings": [
+      "Carnegie Mellon University, Pittsburgh, PA, United States"
+     ],
+     "countries": [
+      "US"
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5013528664",
+      "display_name": "Rongjian Liang"
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I4210127875",
+       "display_name": "Nvidia (United States)",
+       "country_code": "US"
+      }
+     ],
+     "raw_affiliation_strings": [
+      "NVIDIA, Austin, TX, United States"
+     ],
+     "countries": [
+      "US"
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5017765050",
+      "display_name": "Anthony Agnesina"
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I4210127875",
+       "display_name": "Nvidia (United States)",
+       "country_code": "US"
+      }
+     ],
+     "raw_affiliation_strings": [
+      "NVIDIA, Austin, TX, United States"
+     ],
+     "countries": [
+      "US"
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5100642435",
+      "display_name": "Haoyu Yang"
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I4210127875",
+       "display_name": "Nvidia (United States)",
+       "country_code": "US"
+      }
+     ],
+     "raw_affiliation_strings": [
+      "NVIDIA, Austin, TX, United States"
+     ],
+     "countries": [
+      "US"
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5053201835",
+      "display_name": "Chia-Tung Ho"
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I4210127875",
+       "display_name": "Nvidia (United States)",
+       "country_code": "US"
+      }
+     ],
+     "raw_affiliation_strings": [
+      "NVIDIA, Austin, TX, United States"
+     ],
+     "countries": [
+      "US"
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5103343608",
+      "display_name": "Anand Rajaram"
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I4210127875",
+       "display_name": "Nvidia (United States)",
+       "country_code": "US"
+      }
+     ],
+     "raw_affiliation_strings": [
+      "NVIDIA, Austin, TX, United States"
+     ],
+     "countries": [
+      "US"
+     ]
+    },
+    {
+     "author_position": "last",
+     "author": {
+      "id": "https://openalex.org/A5029928585",
+      "display_name": "Haoxing Mark Ren"
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I4210127875",
+       "display_name": "Nvidia (United States)",
+       "country_code": "US"
+      }
+     ],
+     "raw_affiliation_strings": [
+      "NVIDIA, Austin, TX, United States"
+     ],
+     "countries": [
+      "US"
+     ]
+    }
+   ],
+   "primary_topic": null,
+   "keywords": []
+  },
+  {
+   "id": "https://openalex.org/W4409248825",
+   "doi": "https://doi.org/10.1109/hpca61900.2025.00092",
+   "title": "MLPerf Power: Benchmarking the Energy Efficiency of Machine Learning Systems from μWatts to MWatts for Sustainable AI",
+   "publication_year": 2025,
+   "locations": [
+    {
+     "source": null,
+     "raw_source_name": "2025 IEEE International Symposium on High Performance Computer Architecture (HPCA)",
+     "pdf_url": null,
+     "landing_page_url": "https://doi.org/10.1109/hpca61900.2025.00092"
+    }
+   ],
+   "best_oa_location": null,
+   "authorships": [
+    {
+     "author_position": "first",
+     "author": {
+      "id": "https://openalex.org/A5026209684",
+      "display_name": "Arya Tschand"
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I136199984",
+       "display_name": "Harvard University",
+       "country_code": "US"
+      }
+     ],
+     "raw_affiliation_strings": [
+      "Harvard University"
+     ],
+     "countries": [
+      "US"
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5112550338",
+      "display_name": "Arun Tejusve Raghunath Rajan"
+     },
+     "institutions": [],
+     "raw_affiliation_strings": [
+      "Meta"
+     ],
+     "countries": []
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5029865463",
+      "display_name": "Sachin Idgunji"
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I1304085615",
+       "display_name": "Nvidia (United Kingdom)",
+       "country_code": "GB"
+      },
+      {
+       "id": "https://openalex.org/I4210127875",
+       "display_name": "Nvidia (United States)",
+       "country_code": "US"
+      }
+     ],
+     "raw_affiliation_strings": [
+      "NVIDIA"
+     ],
+     "countries": [
+      "GB",
+      "US"
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": null,
+      "display_name": "Anirban Ghosh"
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I1304085615",
+       "display_name": "Nvidia (United Kingdom)",
+       "country_code": "GB"
+      },
+      {
+       "id": "https://openalex.org/I4210127875",
+       "display_name": "Nvidia (United States)",
+       "country_code": "US"
+      }
+     ],
+     "raw_affiliation_strings": [
+      "NVIDIA"
+     ],
+     "countries": [
+      "GB",
+      "US"
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5001161475",
+      "display_name": "Jeremy H. Holleman"
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I102149020",
+       "display_name": "University of North Carolina at Charlotte",
+       "country_code": "US"
+      }
+     ],
+     "raw_affiliation_strings": [
+      "UNC Charlotte / Syntiant"
+     ],
+     "countries": [
+      "US"
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5030558743",
+      "display_name": "Csaba Király"
+     },
+     "institutions": [],
+     "raw_affiliation_strings": [
+      "Codex"
+     ],
+     "countries": []
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5114337209",
+      "display_name": "Pawan Ambalkar"
+     },
+     "institutions": [],
+     "raw_affiliation_strings": [
+      "Dell"
+     ],
+     "countries": []
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5044527679",
+      "display_name": "Ritika Borkar"
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I1304085615",
+       "display_name": "Nvidia (United Kingdom)",
+       "country_code": "GB"
+      },
+      {
+       "id": "https://openalex.org/I4210127875",
+       "display_name": "Nvidia (United States)",
+       "country_code": "US"
+      }
+     ],
+     "raw_affiliation_strings": [
+      "NVIDIA"
+     ],
+     "countries": [
+      "GB",
+      "US"
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5034714517",
+      "display_name": "Ramesh Babu Chukka"
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I1343180700",
+       "display_name": "Intel (United States)",
+       "country_code": "US"
+      }
+     ],
+     "raw_affiliation_strings": [
+      "Intel"
+     ],
+     "countries": [
+      "US"
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5114337205",
+      "display_name": "Trevor Cockrell"
+     },
+     "institutions": [],
+     "raw_affiliation_strings": [
+      "Dell"
+     ],
+     "countries": []
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": null,
+      "display_name": "Oliver Curtis"
+     },
+     "institutions": [],
+     "raw_affiliation_strings": [
+      "SMC"
+     ],
+     "countries": []
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5083325184",
+      "display_name": "Grigori Fursin"
+     },
+     "institutions": [],
+     "raw_affiliation_strings": [
+      "FlexAI / cTuning"
+     ],
+     "countries": []
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5089871809",
+      "display_name": "Miro Hodak"
+     },
+     "institutions": [],
+     "raw_affiliation_strings": [
+      "AMD"
+     ],
+     "countries": []
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5040423477",
+      "display_name": "Hiwot Tadese Kassa"
+     },
+     "institutions": [],
+     "raw_affiliation_strings": [
+      "Meta"
+     ],
+     "countries": []
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5081953467",
+      "display_name": "Anton Lokhmotov"
+     },
+     "institutions": [],
+     "raw_affiliation_strings": [
+      "KRAI"
+     ],
+     "countries": []
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": null,
+      "display_name": "Dejan Miskovic"
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I1304085615",
+       "display_name": "Nvidia (United Kingdom)",
+       "country_code": "GB"
+      },
+      {
+       "id": "https://openalex.org/I4210127875",
+       "display_name": "Nvidia (United States)",
+       "country_code": "US"
+      }
+     ],
+     "raw_affiliation_strings": [
+      "NVIDIA"
+     ],
+     "countries": [
+      "GB",
+      "US"
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5044379569",
+      "display_name": "Yuechao Pan"
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I1291425158",
+       "display_name": "Google (United States)",
+       "country_code": "US"
+      }
+     ],
+     "raw_affiliation_strings": [
+      "Google"
+     ],
+     "countries": [
+      "US"
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5114337206",
+      "display_name": "Manu Prasad Manmathan"
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I1343180700",
+       "display_name": "Intel (United States)",
+       "country_code": "US"
+      }
+     ],
+     "raw_affiliation_strings": [
+      "Intel"
+     ],
+     "countries": [
+      "US"
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": null,
+      "display_name": "Liz Raymond"
+     },
+     "institutions": [],
+     "raw_affiliation_strings": [
+      "Dell"
+     ],
+     "countries": []
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5061911203",
+      "display_name": "Tom St. John"
+     },
+     "institutions": [],
+     "raw_affiliation_strings": [
+      "Decompute"
+     ],
+     "countries": []
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5035820459",
+      "display_name": "Arjun Suresh"
+     },
+     "institutions": [],
+     "raw_affiliation_strings": [
+      "GATE Overflow"
+     ],
+     "countries": []
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5114337207",
+      "display_name": "Rowan Taubitz"
+     },
+     "institutions": [],
+     "raw_affiliation_strings": [
+      "SMC"
+     ],
+     "countries": []
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": null,
+      "display_name": "Sean Zhan"
+     },
+     "institutions": [],
+     "raw_affiliation_strings": [
+      "SMC"
+     ],
+     "countries": []
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5114337208",
+      "display_name": "Scott Wasson"
+     },
+     "institutions": [],
+     "raw_affiliation_strings": [
+      "MLCommons"
+     ],
+     "countries": []
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": null,
+      "display_name": "David Kanter"
+     },
+     "institutions": [],
+     "raw_affiliation_strings": [
+      "MLCommons"
+     ],
+     "countries": []
+    },
+    {
+     "author_position": "last",
+     "author": {
+      "id": "https://openalex.org/A5000635267",
+      "display_name": "Vijay Janapa Reddi"
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I136199984",
+       "display_name": "Harvard University",
+       "country_code": "US"
+      }
+     ],
+     "raw_affiliation_strings": [
+      "Harvard University"
+     ],
+     "countries": [
+      "US"
+     ]
+    }
+   ],
+   "primary_topic": null,
+   "keywords": []
+  },
+  {
+   "id": "https://openalex.org/W4404955116",
+   "doi": "https://doi.org/10.1109/micro61859.2024.00073",
+   "title": "ImPress: Securing DRAM Against Data-Disturbance Errors via Implicit Row-Press Mitigation",
+   "publication_year": 2024,
+   "locations": [
+    {
+     "source": null,
+     "raw_source_name": "2024 57th IEEE/ACM International Symposium on Microarchitecture (MICRO)",
+     "pdf_url": null,
+     "landing_page_url": "https://doi.org/10.1109/micro61859.2024.00073"
+    },
+    {
+     "source": {
+      "display_name": "Zenodo (CERN European Organization for Nuclear Research)"
+     },
+     "raw_source_name": "MICRO, 57th IEEE/ACM International Symposium on Microarchitecture, Austin, USA, 2-6 November 2024",
+     "pdf_url": "http://arxiv.org/pdf/2407.16006",
+     "landing_page_url": "https://arxiv.org/abs/arXiv:2407.16006"
+    },
+    {
+     "source": {
+      "display_name": "Zenodo (CERN European Organization for Nuclear Research)"
+     },
+     "raw_source_name": null,
+     "pdf_url": null,
+     "landing_page_url": "https://doi.org/10.5281/zenodo.13743005"
+    }
+   ],
+   "best_oa_location": {
+    "pdf_url": "http://arxiv.org/pdf/2407.16006"
+   },
+   "authorships": [
+    {
+     "author_position": "first",
+     "author": {
+      "id": "https://openalex.org/A5027016346",
+      "display_name": "Anish Saxena"
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I130701444",
+       "display_name": "Georgia Institute of Technology",
+       "country_code": "US"
+      }
+     ],
+     "raw_affiliation_strings": [
+      "Georgia Tech"
+     ],
+     "countries": [
+      "US"
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5078825915",
+      "display_name": "Aamer Jaleel"
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I1304085615",
+       "display_name": "Nvidia (United Kingdom)",
+       "country_code": "GB"
+      },
+      {
+       "id": "https://openalex.org/I4210127875",
+       "display_name": "Nvidia (United States)",
+       "country_code": "US"
+      }
+     ],
+     "raw_affiliation_strings": [
+      "NVIDIA"
+     ],
+     "countries": [
+      "GB",
+      "US"
+     ]
+    },
+    {
+     "author_position": "last",
+     "author": {
+      "id": "https://openalex.org/A5082772077",
+      "display_name": "Moinuddin K. Qureshi"
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I130701444",
+       "display_name": "Georgia Institute of Technology",
+       "country_code": "US"
+      }
+     ],
+     "raw_affiliation_strings": [
+      "Georgia Tech"
+     ],
+     "countries": [
+      "US"
+     ]
+    }
+   ],
+   "primary_topic": null,
+   "keywords": []
+  },
+  {
+   "id": "https://openalex.org/W4408903581",
+   "doi": "https://doi.org/10.1145/3676641.3716249",
+   "title": "Relax: Composable Abstractions for End-to-End Dynamic Machine Learning",
+   "publication_year": 2025,
+   "locations": [
+    {
+     "source": null,
+     "raw_source_name": "Proceedings of the 30th ACM International Conference on Architectural Support for Programming Languages and Operating Systems, Volume 2",
+     "pdf_url": null,
+     "landing_page_url": "https://doi.org/10.1145/3676641.3716249"
+    },
+    {
+     "source": {
+      "display_name": "arXiv (Cornell University)"
+     },
+     "raw_source_name": null,
+     "pdf_url": "https://arxiv.org/pdf/2311.02103",
+     "landing_page_url": "http://arxiv.org/abs/2311.02103"
+    },
+    {
+     "source": {
+      "display_name": "arXiv (Cornell University)"
+     },
+     "raw_source_name": null,
+     "pdf_url": null,
+     "landing_page_url": "https://doi.org/10.48550/arxiv.2311.02103"
+    }
+   ],
+   "best_oa_location": {
+    "pdf_url": null
+   },
+   "authorships": [
+    {
+     "author_position": "first",
+     "author": {
+      "id": "https://openalex.org/A5025482495",
+      "display_name": "Ruihang Lai"
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I74973139",
+       "display_name": "Carnegie Mellon University",
+       "country_code": "US"
+      }
+     ],
+     "raw_affiliation_strings": [
+      "Carnegie Mellon University, Pittsburgh, USA"
+     ],
+     "countries": [
+      "US"
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5022832599",
+      "display_name": "Junru Shao"
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I4210161460",
+       "display_name": "OpenAI (United States)",
+       "country_code": "US"
+      }
+     ],
+     "raw_affiliation_strings": [
+      "OpenAI, San Francisco, USA"
+     ],
+     "countries": [
+      "US"
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5110303119",
+      "display_name": "S.M. Feng"
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I183067930",
+       "display_name": "Shanghai Jiao Tong University",
+       "country_code": "CN"
+      }
+     ],
+     "raw_affiliation_strings": [
+      "Shanghai Jiao Tong University, Shanghai, China"
+     ],
+     "countries": [
+      "CN"
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5088878478",
+      "display_name": "Steven Lyubomirsky"
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I4210127875",
+       "display_name": "Nvidia (United States)",
+       "country_code": "US"
+      }
+     ],
+     "raw_affiliation_strings": [
+      "NVIDIA, Santa Clara, USA"
+     ],
+     "countries": [
+      "US"
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5065994853",
+      "display_name": "Bohan Hou"
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I74973139",
+       "display_name": "Carnegie Mellon University",
+       "country_code": "US"
+      }
+     ],
+     "raw_affiliation_strings": [
+      "Carnegie Mellon University, Pittsburgh, USA"
+     ],
+     "countries": [
+      "US"
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5076540989",
+      "display_name": "Wuwei Lin"
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I4210161460",
+       "display_name": "OpenAI (United States)",
+       "country_code": "US"
+      }
+     ],
+     "raw_affiliation_strings": [
+      "OpenAI, San Francisco, USA"
+     ],
+     "countries": [
+      "US"
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5101740226",
+      "display_name": "Zihao Ye"
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I201448701",
+       "display_name": "University of Washington",
+       "country_code": "US"
+      }
+     ],
+     "raw_affiliation_strings": [
+      "University of Washington, Seattle, USA"
+     ],
+     "countries": [
+      "US"
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5101264780",
+      "display_name": "Hongyi Jin"
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I74973139",
+       "display_name": "Carnegie Mellon University",
+       "country_code": "US"
+      }
+     ],
+     "raw_affiliation_strings": [
+      "Carnegie Mellon University, Pittsburgh, USA"
+     ],
+     "countries": [
+      "US"
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": null,
+      "display_name": "Yuchen Jin"
+     },
+     "institutions": [],
+     "raw_affiliation_strings": [
+      "Hyperbolic, San Francisco, USA"
+     ],
+     "countries": []
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5100320734",
+      "display_name": "Jiawei Liu"
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I157725225",
+       "display_name": "University of Illinois Urbana-Champaign",
+       "country_code": "US"
+      }
+     ],
+     "raw_affiliation_strings": [
+      "University of Illinois Urbana-Champaign, Champaign, USA"
+     ],
+     "countries": [
+      "US"
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5085532253",
+      "display_name": "Li-Jie Jin"
+     },
+     "institutions": [],
+     "raw_affiliation_strings": [
+      "Hyperbolic, San Francisco, USA"
+     ],
+     "countries": []
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5110780058",
+      "display_name": "Yaxing Cai"
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I4210127875",
+       "display_name": "Nvidia (United States)",
+       "country_code": "US"
+      }
+     ],
+     "raw_affiliation_strings": [
+      "NVIDIA, Santa Clara, USA"
+     ],
+     "countries": [
+      "US"
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": null,
+      "display_name": "Ziheng Jiang"
+     },
+     "institutions": [],
+     "raw_affiliation_strings": [
+      "ByteDance, Seattle, USA"
+     ],
+     "countries": []
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": null,
+      "display_name": "Yong Wu"
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I4210127875",
+       "display_name": "Nvidia (United States)",
+       "country_code": "US"
+      }
+     ],
+     "raw_affiliation_strings": [
+      "NVIDIA, Santa Clara, USA"
+     ],
+     "countries": [
+      "US"
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5051721604",
+      "display_name": "Sunghyun Park"
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I4210127875",
+       "display_name": "Nvidia (United States)",
+       "country_code": "US"
+      }
+     ],
+     "raw_affiliation_strings": [
+      "NVIDIA, Santa Clara, USA"
+     ],
+     "countries": [
+      "US"
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5019989676",
+      "display_name": "Prakalp Srivastava"
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I869089601",
+       "display_name": "Netflix (United States)",
+       "country_code": "US"
+      }
+     ],
+     "raw_affiliation_strings": [
+      "Netflix, Los Gatos, USA"
+     ],
+     "countries": [
+      "US"
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5076140574",
+      "display_name": "Jared Roesch"
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I4210127875",
+       "display_name": "Nvidia (United States)",
+       "country_code": "US"
+      }
+     ],
+     "raw_affiliation_strings": [
+      "NVIDIA, Santa Clara, USA"
+     ],
+     "countries": [
+      "US"
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5076667915",
+      "display_name": "Todd C. Mowry"
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I74973139",
+       "display_name": "Carnegie Mellon University",
+       "country_code": "US"
+      }
+     ],
+     "raw_affiliation_strings": [
+      "Carnegie Mellon University, Pittsburgh, USA"
+     ],
+     "countries": [
+      "US"
+     ]
+    },
+    {
+     "author_position": "last",
+     "author": {
+      "id": "https://openalex.org/A5023529355",
+      "display_name": "Tianqi Chen"
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I74973139",
+       "display_name": "Carnegie Mellon University",
+       "country_code": "US"
+      }
+     ],
+     "raw_affiliation_strings": [
+      "Carnegie Mellon University, Pittsburgh, USA and NVIDIA, Santa Clara, USA"
+     ],
+     "countries": [
+      "US"
+     ]
+    }
+   ],
+   "primary_topic": null,
+   "keywords": []
+  },
+  {
+   "id": "https://openalex.org/W4392719523",
+   "doi": "https://doi.org/10.1109/mm.2024.3375070",
+   "title": "AMD Next-Generation “Zen 4” Core and 4th Gen AMD EPYC Server CPUs",
+   "publication_year": 2024,
+   "locations": [
+    {
+     "source": {
+      "display_name": "IEEE Micro"
+     },
+     "raw_source_name": "IEEE Micro",
+     "pdf_url": null,
+     "landing_page_url": "https://doi.org/10.1109/mm.2024.3375070"
+    }
+   ],
+   "best_oa_location": null,
+   "authorships": [
+    {
+     "author_position": "first",
+     "author": {
+      "id": "https://openalex.org/A5114500312",
+      "display_name": "Ravi Bhargava"
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I4210137977",
+       "display_name": "Advanced Micro Devices (United States)",
+       "country_code": "US"
+      }
+     ],
+     "raw_affiliation_strings": [
+      "AMD, Austin, TX, USA"
+     ],
+     "countries": [
+      "US"
+     ]
+    },
+    {
+     "author_position": "last",
+     "author": {
+      "id": "https://openalex.org/A5092947136",
+      "display_name": "Kai Troester"
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I4210137977",
+       "display_name": "Advanced Micro Devices (United States)",
+       "country_code": "US"
+      }
+     ],
+     "raw_affiliation_strings": [
+      "AMD, Boxborough, MA, USA"
+     ],
+     "countries": [
+      "US"
+     ]
+    }
+   ],
+   "primary_topic": null,
+   "keywords": []
+  },
+  {
+   "id": "https://openalex.org/W4390724577",
+   "doi": "https://doi.org/10.1109/tmtt.2023.3346407",
+   "title": "140-GHz 2-D Scalable On-Grid 8⨉ 8-Element Transmit–Receive Phased Arrays With Up/Down Converters Demonstrating a 5.2-m Link at 16 Gbps",
+   "publication_year": 2024,
+   "locations": [
+    {
+     "source": {
+      "display_name": "IEEE Transactions on Microwave Theory and Techniques"
+     },
+     "raw_source_name": "IEEE Transactions on Microwave Theory and Techniques",
+     "pdf_url": null,
+     "landing_page_url": "https://doi.org/10.1109/tmtt.2023.3346407"
+    }
+   ],
+   "best_oa_location": null,
+   "authorships": [
+    {
+     "author_position": "first",
+     "author": {
+      "id": "https://openalex.org/A5063748484",
+      "display_name": "Amr Shebl Ahmed"
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I36258959",
+       "display_name": "University of California San Diego",
+       "country_code": "US"
+      },
+      {
+       "id": "https://openalex.org/I4210127875",
+       "display_name": "Nvidia (United States)",
+       "country_code": "US"
+      }
+     ],
+     "raw_affiliation_strings": [
+      "Department of Electrical and Computer Engineering, University of California, San Diego, CA, USA",
+      "Department of Electrical and Computer Engineering, University of California, San Diego, La Jolla, CA, USA",
+      "Nvidia Corporation, Santa Clara, CA, USA"
+     ],
+     "countries": [
+      "US"
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5044397668",
+      "display_name": "Linjie Li"
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I36258959",
+       "display_name": "University of California San Diego",
+       "country_code": "US"
+      }
+     ],
+     "raw_affiliation_strings": [
+      "Department of Electrical and Computer Engineering, University of California, San Diego, CA, USA",
+      "Department of Electrical and Computer Engineering, University of California at San Diego, La Jolla, CA, USA"
+     ],
+     "countries": [
+      "US"
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5075135944",
+      "display_name": "Minjae Jung"
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I36258959",
+       "display_name": "University of California San Diego",
+       "country_code": "US"
+      }
+     ],
+     "raw_affiliation_strings": [
+      "Department of Electrical and Computer Engineering, University of California, San Diego, CA, USA",
+      "Department of Electrical and Computer Engineering, University of California at San Diego, La Jolla, CA, USA"
+     ],
+     "countries": [
+      "US"
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5100733083",
+      "display_name": "Siwei Li"
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I36258959",
+       "display_name": "University of California San Diego",
+       "country_code": "US"
+      },
+      {
+       "id": "https://openalex.org/I4210153776",
+       "display_name": "Apple (United States)",
+       "country_code": "US"
+      }
+     ],
+     "raw_affiliation_strings": [
+      "Department of Electrical and Computer Engineering, University of California, San Diego, CA, USA",
+      "Apple San Diego Design Center, San Diego, CA, USA",
+      "Department of Electrical and Computer Engineering, University of California at San Diego, La Jolla, CA, USA"
+     ],
+     "countries": [
+      "US"
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5056283055",
+      "display_name": "Dimitrios Baltimas"
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I36258959",
+       "display_name": "University of California San Diego",
+       "country_code": "US"
+      },
+      {
+       "id": "https://openalex.org/I4405260962",
+       "display_name": "Samsung Semiconductor (United States)",
+       "country_code": "US"
+      }
+     ],
+     "raw_affiliation_strings": [
+      "Department of Electrical and Computer Engineering, University of California, San Diego, CA, USA",
+      "Department of Electrical and Computer Engineering, University of California at San Diego, La Jolla, CA, USA",
+      "Samsung Semiconductor, Inc, San Diego, CA, USA"
+     ],
+     "countries": [
+      "US"
+     ]
+    },
+    {
+     "author_position": "last",
+     "author": {
+      "id": "https://openalex.org/A5006411685",
+      "display_name": "Gabriel M. Rebeiz"
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I36258959",
+       "display_name": "University of California San Diego",
+       "country_code": "US"
+      }
+     ],
+     "raw_affiliation_strings": [
+      "Department of Electrical and Computer Engineering, University of California, San Diego, CA, USA",
+      "Department of Electrical and Computer Engineering, University of California at San Diego, La Jolla, CA, USA"
+     ],
+     "countries": [
+      "US"
+     ]
+    }
+   ],
+   "primary_topic": null,
+   "keywords": []
+  },
+  {
+   "id": "https://openalex.org/W4399629579",
+   "doi": "https://doi.org/10.1145/3656296",
+   "title": "NetConfEval: Can LLMs Facilitate Network Configuration?",
+   "publication_year": 2024,
+   "locations": [
+    {
+     "source": {
+      "display_name": "Proceedings of the ACM on Networking"
+     },
+     "raw_source_name": "Proceedings of the ACM on Networking",
+     "pdf_url": null,
+     "landing_page_url": "https://doi.org/10.1145/3656296"
+    }
+   ],
+   "best_oa_location": {
+    "pdf_url": null
+   },
+   "authorships": [
+    {
+     "author_position": "first",
+     "author": {
+      "id": "https://openalex.org/A5071865765",
+      "display_name": "Changjie Wang"
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I86987016",
+       "display_name": "KTH Royal Institute of Technology",
+       "country_code": "SE"
+      }
+     ],
+     "raw_affiliation_strings": [
+      "KTH Royal Institute of Technology, Stockholm, Sweden"
+     ],
+     "countries": [
+      "SE"
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5089462139",
+      "display_name": "Mariano Scazzariello"
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I86987016",
+       "display_name": "KTH Royal Institute of Technology",
+       "country_code": "SE"
+      }
+     ],
+     "raw_affiliation_strings": [
+      "KTH Royal Institute of Technology, Stockholm, Sweden"
+     ],
+     "countries": [
+      "SE"
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5066610907",
+      "display_name": "Alireza Farshin"
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I4210127875",
+       "display_name": "Nvidia (United States)",
+       "country_code": "US"
+      }
+     ],
+     "raw_affiliation_strings": [
+      "NVIDIA, Stockholm, Sweden"
+     ],
+     "countries": [
+      "US"
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5019583021",
+      "display_name": "Simone Ferlin"
+     },
+     "institutions": [],
+     "raw_affiliation_strings": [
+      "Red Hat, Stockholm, Sweden"
+     ],
+     "countries": []
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5048036382",
+      "display_name": "Dejan Kostić"
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I86987016",
+       "display_name": "KTH Royal Institute of Technology",
+       "country_code": "SE"
+      }
+     ],
+     "raw_affiliation_strings": [
+      "KTH Royal Institute of Technology, Stockholm, Sweden"
+     ],
+     "countries": [
+      "SE"
+     ]
+    },
+    {
+     "author_position": "last",
+     "author": {
+      "id": "https://openalex.org/A5058517041",
+      "display_name": "Marco Chiesa"
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I86987016",
+       "display_name": "KTH Royal Institute of Technology",
+       "country_code": "SE"
+      }
+     ],
+     "raw_affiliation_strings": [
+      "KTH Royal Institute of Technology, Stockholm, Sweden"
+     ],
+     "countries": [
+      "SE"
+     ]
+    }
+   ],
+   "primary_topic": null,
+   "keywords": []
+  }
+ ]
+}

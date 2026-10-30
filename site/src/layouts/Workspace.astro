@@ -1,0 +1,22 @@
+---
+// The private workspace (/app/tasks, /app/jobs): the portfolio's document shell (fonts, the three
+// themes, the dotted background) with the shared workspace bar on top. No board or canvas effects.
+import Base from './Base.astro';
+import WorkspaceBar from '../components/workspace/WorkspaceBar.astro';
+import '../styles/workspace.css';
+import { env } from 'cloudflare:workers';
+
+interface Props { title: string; current: 'tasks' | 'jobs' }
+const { title, current } = Astro.props;
+// Remember which area was open last, so /app reopens it on any device.
+try {
+  await env.DB.prepare("INSERT INTO ws_ui(key,value,updated_at) VALUES('app.lastArea',?,?) ON CONFLICT(key) DO UPDATE SET value=excluded.value,updated_at=excluded.updated_at")
+    .bind(JSON.stringify(current), new Date().toISOString()).run();
+} catch { /* the table may not exist before migration 0012 */ }
+---
+
+<Base title={`${title} · Workspace`} description="Private.">
+  <meta slot="head" name="robots" content="noindex, nofollow" />
+  <WorkspaceBar current={current} />
+  <div class="ws-page"><slot /></div>
+</Base>

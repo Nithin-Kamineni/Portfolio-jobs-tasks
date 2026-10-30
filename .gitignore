@@ -1,0 +1,36 @@
+# dependencies and builds
+node_modules/
+site/dist/
+site/.astro/
+site/.wrangler/
+dashboard/web/dist/
+dashboard/test-results/
+dashboard/playwright-report/
+dashboard/tests/.tmp/
+watcher/.out/
+watcher/.cache/
+pages-proxy/.wrangler/
+
+# secrets and per-PC settings (never commit)
+site/.dev.vars
+.env
+dashboard/config.local.json
+
+# the job dashboard's local database and backups (the website's D1 is the shared copy)
+data/jobwatcher.db
+data/*.db-shm
+data/*.db-wal
+data/backups/
+data/scratch/
+
+# résumé files (may contain your phone number); put a phone-free public CV in site/public/cv/ instead
+Resume/*
+!Resume/.gitkeep
+
+# OS / editor
+~$*
+*.tmp
+Thumbs.db
+desktop.ini
+.DS_Store
+*.stackdump

@@ -1,0 +1,20 @@
+---
+// The portfolio: one page, prerendered at build time so every word is in the HTML, then hydrated as a single
+// React island (the header, the sticky pipeline nav, the sections). With the portfolio switched off
+// (owner.config.ts → MODULES), / is a small page that points to the private app instead.
+import Base from '../layouts/Base.astro';
+import App from '../components/App';
+import { MODULES, OWNER } from '../owner.config';
+---
+
+<Base>
+  {MODULES.portfolio ? <App client:load /> : (
+    <main style="min-height:100vh;display:grid;place-items:center;text-align:center;padding:24px">
+      <div>
+        <span class="logo-chip" style="display:inline-grid;margin-bottom:16px">{OWNER.initials}</span>
+        <h1 style="font:600 28px var(--display);margin:0 0 12px">{OWNER.name}</h1>
+        <p><a href="/app/">Open the app →</a></p>
+      </div>
+    </main>
+  )}
+</Base>

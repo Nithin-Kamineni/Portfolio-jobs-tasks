@@ -1,0 +1,8 @@
+---
+import Workspace from '../../../layouts/Workspace.astro';
+import JobsApp from '../../../apps/JobsApp';
+import { MODULES } from '../../../owner.config';
+export const prerender = false;
+if (!MODULES.jobs) return new Response('Not found', { status: 404 });
+---
+<Workspace title="Jobs" current="jobs"><JobsApp client:only="react" /></Workspace>

@@ -1,0 +1,10 @@
+# Optional: serve the site at https://<name>.pages.dev through this pass-through (see docs/deploy-cloudflare.md).
+# Cloudflare Access guards /app and /api on pages.dev, then every request goes to the site Worker over a service binding.
+# Deploy: cd pages-proxy && npx --prefix ../site wrangler pages deploy dist --project-name <name> --branch main
+name = "my-site"
+pages_build_output_dir = "./dist"
+compatibility_date = "2026-10-01"
+
+[[services]]
+binding = "SITE"
+service = "my-site"

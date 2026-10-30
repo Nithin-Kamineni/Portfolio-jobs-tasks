@@ -1,0 +1,13 @@
+---
+// Where the login and the secret logo-chip entry land: the area (Tasks or Jobs) that was open last.
+import { env } from 'cloudflare:workers';
+import { MODULES } from '../../owner.config';
+export const prerender = false;
+let area = MODULES.tasks ? 'tasks' : 'jobs';
+try {
+  const row = await env.DB.prepare("SELECT value FROM ws_ui WHERE key='app.lastArea'").first<{ value: string }>();
+  if (row && JSON.parse(row.value) === 'jobs' && MODULES.jobs) area = 'jobs';
+} catch { /* before migration 0012 */ }
+if (!MODULES.tasks && !MODULES.jobs) return new Response('Not found', { status: 404 });
+return Astro.redirect(`/app/${area}/`, 302);
+---

@@ -1,0 +1,42 @@
+---
+// The one bar every private page shares: switch between Tasks and Jobs, or leave for the portfolio.
+// The logo chip is a label here, not a link, so a stray click never leaves the workspace.
+import ThemeToggle from '../site/ThemeToggle';
+import { MODULES, OWNER } from '../../owner.config';
+
+interface Props { current: 'tasks' | 'jobs' }
+const { current } = Astro.props;
+const user = Astro.locals.user;
+const who = user?.kind === 'user' ? user.email : '';
+const tabs = [
+  { id: 'tasks', href: '/app/tasks/', label: 'Tasks', on: MODULES.tasks },
+  { id: 'jobs', href: '/app/jobs/', label: 'Jobs', on: MODULES.jobs },
+].filter((t) => t.on);
+---
+
+<header class="ws-bar">
+  <span class="ws-brand" title={who ? `Signed in as ${who}` : undefined}>
+    <span class="logo-chip" aria-hidden="true">{OWNER.initials}</span><span class="ws-brand-name">Workspace</span>
+  </span>
+  <nav class="ws-tabs" aria-label="Workspace">
+    {tabs.map((t) => <a href={t.href} aria-current={t.id === current ? 'page' : undefined}>{t.label}</a>)}
+    {MODULES.portfolio && <><span class="ws-sep" aria-hidden="true"></span>
+    <a href="/" class="ws-portfolio">Portfolio <span aria-hidden="true">↗</span></a></>}
+  </nav>
+  <div class="ws-right">
+    {who && <span class="ws-who">{who}</span>}
+    <ThemeToggle client:load />
+    <a href="/cdn-cgi/access/logout" class="ws-signout" data-signout>Sign out</a>
+  </div>
+</header>
+
+<script>
+  // Sign out: end the session in the background (Cloudflare Access on the real site, the local
+  // preview session in astro dev), then show our own page instead of Cloudflare's bare logout page.
+  document.querySelector('[data-signout]')?.addEventListener('click', (e) => {
+    e.preventDefault();
+    fetch('/cdn-cgi/access/logout', { credentials: 'same-origin', cache: 'no-store' })
+      .catch(() => undefined)
+      .finally(() => location.replace('/signed-out/'));
+  });
+</script>

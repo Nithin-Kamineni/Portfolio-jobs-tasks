@@ -1,0 +1,6 @@
+company,priority,enabled,ats,tenant,host,site,search_terms,careers_url,fit_notes,search_url,you_check,you_check_reason
+NVIDIA,A,yes,workday,nvidia,nvidia.wd5.myworkdayjobs.com,NVIDIAExternalCareerSite,,https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite,Example (Workday board): replace with your own targets,,,
+Google,A,yes,google,,,,intern;new grad,https://www.google.com/about/careers/applications/jobs/results?q=intern,Example (Google careers search),,,
+Microsoft,A,yes,pcsx,microsoft.com,apply.careers.microsoft.com,,intern;new grad,https://apply.careers.microsoft.com/careers?query=intern,Example (Microsoft careers),,,
+Tenstorrent,B,yes,greenhouse,tenstorrent,,,,https://job-boards.greenhouse.io/tenstorrent,Example (Greenhouse board),,,
+Cerebras,B,yes,ashby,cerebras,,,,https://jobs.ashbyhq.com/cerebras,Example (Ashby board),,,

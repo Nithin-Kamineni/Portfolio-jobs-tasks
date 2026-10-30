@@ -1,0 +1,31 @@
+{
+  "_comment": "Local dashboard settings. Paths are relative to the repo root (the folder above dashboard/).",
+  "port": 5178,
+  "outlookComposeUrl": "https://outlook.office.com/mail/deeplink/compose",
+  "outlookMaxUrlLength": 2000,
+  "resumeCandidates": [
+    "Resume/Resume.pdf"
+  ],
+  "backupKeep": 14,
+  "claudeCommand": "claude",
+  "runs": {
+    "_comment": "Claude runs from the dashboard (plan_dashboard_v2). tasks.<id> can override model / effort / maxTurns / timeoutMin.",
+    "autoCommit": true,
+    "manualCheckEveryHours": 24,
+    "finalMinFit": 30,
+    "keepLogs": 100,
+    "tasks": {}
+  },
+  "cloudSync": {
+    "_comment": "Two-way sync with the website database (D1) through wrangler: every intervalMinutes, debounceSeconds after a local change, and after Sync. node dashboard/cli cloud-sync runs it by hand.",
+    "enabled": false,
+    "intervalMinutes": 5,
+    "debounceSeconds": 20
+  },
+  "runRequests": {
+    "_comment": "The website queue: buttons on the website (Process new jobs, Sync, Fetch description, Find R&D emails) insert a request in D1; this dashboard checks every intervalSeconds (heartbeat too), runs it like its own button and writes the outcome back. Needs cloudSync.enabled. Off with JOBWATCHER_RUN_REQUESTS=off.",
+    "enabled": false,
+    "intervalSeconds": 20,
+    "progressSeconds": 25
+  }
+}

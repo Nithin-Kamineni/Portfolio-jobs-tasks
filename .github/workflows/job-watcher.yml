@@ -1,0 +1,60 @@
+name: Job watcher
+
+# Reads the career sites in targets/companies.csv and commits jobs/inbox, jobs/digests and watcher/state back, then opens an
+# issue when there are new matches (GitHub e-mails you). Run it by hand from the Actions tab, or uncomment the schedule
+# below once targets/companies.csv and watcher/keywords.json are set up (claude/jobs.md, setup steps 5-7).
+on:
+  # schedule:
+  #   - cron: "0 11,17,22 * * *"   # 3x a day (UTC)
+  workflow_dispatch:
+    inputs:
+      reset:
+        description: "Forget seen jobs and report everything again"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: job-watcher
+  cancel-in-progress: false
+
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90  # complete scans (no page caps) plus up to 200 descriptions per company; the first run after a filter change re-checks old rejections
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Run watcher
+        run: node watcher/watch.js ${{ inputs.reset && '--reset' || '' }}
+
+      - name: Commit state, digest and inbox
+        run: |
+          git config user.name "job-watcher[bot]"
+          git config user.email "job-watcher@users.noreply.github.com"
+          # jobs/inbox/*.jsonl holds the full job records the local dashboard imports.
+          # jobs/tracker.csv is not touched here (the dashboard regenerates it), so no merge conflicts.
+          mkdir -p jobs/inbox
+          git add watcher/state jobs/digests jobs/inbox
+          if git diff --cached --quiet; then echo "Nothing to commit"; exit 0; fi
+          git commit -m "Job watcher: $(cat watcher/.out/count.txt) new match(es)"
+          git pull --rebase --autostash
+          git push
+
+      - name: Open an issue for new matches (GitHub emails you)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          n=$(cat watcher/.out/count.txt)
+          if [ "$n" -gt 0 ]; then
+            gh label create jobs --color 1D76DB --description "Job watcher digests" 2>/dev/null || true
+            printf '\n\ncc @%s\n' "${{ github.repository_owner }}" >> watcher/.out/issue.md
+            gh issue create --title "$n new job match(es) – $(date -u +'%Y-%m-%d %H:%M') UTC" --label jobs --body-file watcher/.out/issue.md
+          fi

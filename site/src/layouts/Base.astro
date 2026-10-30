@@ -1,0 +1,57 @@
+---
+// The document shell shared by every public page: metadata, the theme before first paint,
+// self-hosted fonts with metric-matched fallbacks, and the global stylesheets.
+import '../styles/styles.css';
+import '../styles/site.css';
+import { OWNER } from '../owner.config';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { title = OWNER.siteTitle, description = OWNER.description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#06080c" />
+    <meta property="og:title" content={OWNER.siteTitle} />
+    <meta property="og:description" content={OWNER.description} />
+    <meta property="og:type" content="website" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <script is:inline>
+      // Theme before first paint: the stored choice, else the system's (dark unless it asks for light).
+      (function () {
+        var t = null;
+        try { t = localStorage.getItem('theme'); } catch (e) {}
+        if (t !== 'dark' && t !== 'dim' && t !== 'light') t = matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+        document.documentElement.dataset.theme = t;
+      })();
+    </script>
+    <!-- Fonts are self-hosted (Fontsource builds, SIL OFL; licences in public/fonts/) and preloaded, so the
+         first render already has them: no render-blocking third-party CSS and no reflow when they arrive. -->
+    <link rel="preload" href="/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/jetbrains-mono-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/space-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <style is:inline>
+      @font-face { font-family: 'Inter'; src: url('/fonts/inter-latin-wght-normal.woff2') format('woff2'); font-weight: 100 900; font-style: normal; font-display: swap; }
+      @font-face { font-family: 'JetBrains Mono'; src: url('/fonts/jetbrains-mono-latin-wght-normal.woff2') format('woff2'); font-weight: 100 800; font-style: normal; font-display: swap; }
+      @font-face { font-family: 'Space Grotesk'; src: url('/fonts/space-grotesk-latin-wght-normal.woff2') format('woff2'); font-weight: 300 700; font-style: normal; font-display: swap; }
+      /* The text is in the HTML before the web fonts arrive. These local fallbacks are scaled to the
+         same advance widths and line heights (capsize metrics), so the swap doesn't move anything. */
+      @font-face { font-family: 'Inter Fallback'; src: local('Arial'); size-adjust: 107.12%; ascent-override: 90.44%; descent-override: 22.52%; line-gap-override: 0%; }
+      @font-face { font-family: 'Space Grotesk Fallback'; src: local('Arial'); size-adjust: 109.69%; ascent-override: 89.71%; descent-override: 26.62%; line-gap-override: 0%; }
+      @font-face { font-family: 'JetBrains Mono Fallback'; src: local('Courier New'); size-adjust: 99.98%; ascent-override: 102.02%; descent-override: 30%; line-gap-override: 0%; }
+    </style>
+    <slot name="head" />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

@@ -1,0 +1,25 @@
+---
+// Local preview only (astro dev): stands in for the Cloudflare Access + Google login, so a fresh or
+// incognito window has to sign in and Sign out really signs out. Production answers 404.
+import Base from '../layouts/Base.astro';
+import '../styles/workspace.css';
+export const prerender = false;
+
+if (!import.meta.env.DEV) return new Response('Not found', { status: 404 });
+const raw = Astro.url.searchParams.get('next') ?? '/app/tasks/';
+const next = raw.startsWith('/app') ? raw : '/app/tasks/';
+if (Astro.request.method === 'POST') {
+  Astro.cookies.set('dev_session', '1', { path: '/', httpOnly: true, sameSite: 'lax' });
+  return Astro.redirect(next, 303);
+}
+---
+<Base title="Sign in · local preview" description="Private.">
+  <meta slot="head" name="robots" content="noindex, nofollow" />
+  <main class="ws-gate">
+    <span class="logo-chip">NK</span>
+    <h1>Workspace</h1>
+    <p>This is the <b>local preview</b> on this PC. The real site asks for your Google login here.</p>
+    <form method="post"><button class="ws-gate-btn">Sign in (local preview)</button></form>
+    <a href="/">← Back to the portfolio</a>
+  </main>
+</Base>

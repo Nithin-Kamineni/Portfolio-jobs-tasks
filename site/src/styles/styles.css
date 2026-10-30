@@ -1,0 +1,329 @@
+/* Three themes: dark (default), dim (in between) and light. The chip package and the hero canvas
+   stay dark in every theme: it is the one physical part on the board. The [data-doc-theme] selectors let
+   the workspace documents use their own theme inside any site theme (docs/Docs.tsx). */
+:root, :root[data-theme='dark'], [data-doc-theme='dark'], [data-doc-theme='dim'] {
+  --bg: #06080c;
+  --bg-2: #0a0e14;
+  --panel: #0c1017;
+  --card: #0b0f15;
+  --line: #1a2230;
+  --line-2: #243044;
+  --line-3: #33435c;
+  --text: #e6edf3;
+  --text-2: #c3cdd9;
+  --text-3: #a3b0c0;
+  --muted: #7d8a9b;
+  --faint: #4b5868;
+  --dot: rgba(148, 163, 184, 0.045);
+  --chip-bg: rgba(12, 16, 23, 0.85);
+  --bar-bg: rgba(6, 8, 12, 0.86);
+  --tag: #10161f;
+  --tag-hover: #161e2a;
+  --bit: #121924;
+  --gh: #f0f6fc;
+  --on-accent: #06080c;
+  --shadow: rgba(0, 0, 0, 0.35);
+  --cyan: #22d3ee;
+  --amber: #f5a524;
+  --copper: #cd8c52;
+  --copper-hi: #f0a868;
+  --gold: #e8c27a;
+  --violet: #a78bfa;
+  --red: #f43f5e;
+  --rose: #fb7185;
+  --green: #34d399;
+  /* The "… Fallback" faces (Base.astro) are local fonts scaled to the web fonts' metrics, so the
+     prerendered text keeps its layout when the web fonts arrive. */
+  --mono: 'JetBrains Mono', 'JetBrains Mono Fallback', ui-monospace, monospace;
+  --sans: 'Inter', 'Inter Fallback', system-ui, sans-serif;
+  --display: 'Space Grotesk', 'Space Grotesk Fallback', 'Inter', sans-serif;
+  /* The board axis: 960 canvas + 2 × 12 package padding + 2 × 1 border. */
+  --board: 986px;
+  color-scheme: dark;
+}
+/* Dim: a blue-slate dusk between the two. */
+:root[data-theme='dim'], [data-doc-theme='dim'] {
+  --bg: #121821;
+  --bg-2: #161d27;
+  --panel: #1a2230;
+  --card: #18202c;
+  --line: #263041;
+  --line-2: #334056;
+  --line-3: #46546d;
+  --text: #edf1f6;
+  --text-2: #d0d8e2;
+  --text-3: #b2bdca;
+  --muted: #8e9bac;
+  --faint: #66738a;
+  --dot: rgba(203, 213, 225, 0.06);
+  --chip-bg: rgba(26, 34, 48, 0.9);
+  --bar-bg: rgba(18, 24, 33, 0.88);
+  --tag: #202938;
+  --tag-hover: #283345;
+  --bit: #1c2533;
+  --cyan: #45d3e8;
+  --copper: #d69a63;
+  --copper-hi: #f2b075;
+  --violet: #b6a3fc;
+  --green: #4ade9a;
+  color-scheme: dark;
+}
+/* Light: warm paper, like a bare board before assembly. */
+:root[data-theme='light'], [data-doc-theme='light'] {
+  --bg: #f5f3ee;
+  --bg-2: #efece5;
+  --panel: #fffdf9;
+  --card: #fffdf9;
+  --line: #e5e1d8;
+  --line-2: #d5d0c5;
+  --line-3: #b9b2a3;
+  --text: #161b22;
+  --text-2: #303844;
+  --text-3: #4a5361;
+  --muted: #667080;
+  --faint: #9aa1ab;
+  --dot: rgba(71, 85, 105, 0.1);
+  --chip-bg: rgba(255, 253, 249, 0.92);
+  --bar-bg: rgba(245, 243, 238, 0.88);
+  --tag: #ebe7df;
+  --tag-hover: #e1dcd1;
+  --bit: #ece8e0;
+  --gh: #1f2328;
+  --on-accent: #ffffff;
+  --shadow: rgba(60, 50, 30, 0.12);
+  --cyan: #0e7490;
+  --amber: #b45309;
+  --copper: #a8622a;
+  --copper-hi: #b5652a;
+  --gold: #a16207;
+  --violet: #6d28d9;
+  --red: #be123c;
+  --rose: #e11d48;
+  --green: #047857;
+  color-scheme: light;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body {
+  background:
+    radial-gradient(var(--dot) 1px, transparent 1.4px) 0 0 / 24px 24px,
+    radial-gradient(1200px 600px at 70% -10%, rgba(34, 211, 238, 0.07), transparent 60%),
+    radial-gradient(900px 500px at 0% 30%, rgba(205, 140, 82, 0.06), transparent 60%),
+    var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  -webkit-font-smoothing: antialiased;
+}
+button { font: inherit; color: inherit; }
+
+.page { position: relative; max-width: 1320px; margin: 0 auto; padding: 0 28px 56px; }
+main { position: relative; z-index: 1; }
+
+/* nav */
+.nav {
+  position: relative; z-index: 4;
+  /* Same width as the package, so the nav wires' lanes always run outside the links. */
+  width: min(var(--board), 100% - 96px); height: 64px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.logo { display: flex; align-items: center; gap: 12px; color: var(--text); text-decoration: none; }
+.logo-chip {
+  position: relative; display: grid; place-items: center; width: 34px; height: 34px;
+  font: 700 12px var(--mono); letter-spacing: 0.04em;
+  border: 1px solid var(--line-2); border-radius: 6px; background: var(--panel);
+  box-shadow: 0 0 0 3px var(--bg), 0 0 0 4px rgba(205, 140, 82, 0.35);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.logo-name { font: 600 16px var(--sans); color: var(--text); letter-spacing: -0.01em; }
+.nav-links { display: flex; align-items: center; gap: 24px; }
+.nav-links a { color: var(--text-3); text-decoration: none; font: 500 15px var(--mono); transition: color 0.2s, text-shadow 0.2s; }
+.nav-sep { width: 1px; height: 18px; background: var(--line-2); margin: 0 -8px; }
+.nav-links a.nav-icon {
+  display: grid; place-items: center; width: 32px; height: 32px; margin: 0 -10px 0 0;
+  border: 1px solid var(--line-2); border-radius: 8px; background: var(--panel); color: var(--text-3);
+  transition: color 0.2s, border-color 0.2s, box-shadow 0.25s;
+}
+.nav-links a.nav-icon:last-child { margin-right: 0; }
+.nav-links a.nav-icon:hover, .nav-links a.nav-icon:focus-visible { color: var(--text); border-color: var(--cyan); }
+.nav-icon svg { width: 16px; height: 16px; fill: currentColor; }
+/* Brand colours make the three profiles recognisable at a glance. */
+.nav-links a.nav-icon.scholar { color: #4285f4; }
+.nav-links a.nav-icon.linkedin { color: #0a66c2; background: #e8f1fb; border-color: #0a66c2; }
+.nav-links a.nav-icon.linkedin svg { width: 15px; height: 15px; }
+.nav-links a.nav-icon.github { color: var(--gh); }
+.nav-links a.nav-icon.scholar:hover, .nav-links a.nav-icon.scholar:focus-visible { color: #6ea2ff; }
+.nav-links a.nav-icon.linkedin:hover, .nav-links a.nav-icon.linkedin:focus-visible { color: #0a66c2; background: #fff; border-color: #fff; }
+.nav-links a.nav-icon[data-lit] { color: var(--text); border-color: var(--lit); box-shadow: 0 0 0 1px color-mix(in srgb, var(--lit) 35%, transparent), 0 0 18px color-mix(in srgb, var(--lit) 35%, transparent); text-shadow: none; }
+.nav-links a:hover, .nav-links a:focus-visible { color: var(--text); }
+.nav-cv { color: var(--cyan) !important; }
+
+/* intro: centered on the board axis */
+/* padding-top leaves the band for the nav wires' bus (one level, navBottom + 14). */
+.intro { position: relative; z-index: 4; text-align: center; padding-top: 30px; }
+.kicker {
+  display: flex; align-items: center; justify-content: center; gap: 10px; width: fit-content; margin: 0 auto 10px;
+  font: 500 14.5px var(--mono); color: var(--text-3); letter-spacing: 0.02em;
+}
+.dot { width: 7px; height: 7px; border-radius: 50%; background: var(--green); box-shadow: 0 0 10px var(--green); }
+h1 {
+  font: 600 clamp(30px, 2.8vw, 40px) / 1.08 var(--display);
+  letter-spacing: -0.025em; max-width: 1000px; width: fit-content; margin: 0 auto 14px; text-wrap: balance;
+}
+h1 .accent { color: var(--cyan); }
+h1 .dim { color: var(--text-3); }
+.lede { font-size: 16px; line-height: 1.55; color: var(--text-3); max-width: 760px; margin: 0 auto 16px; }
+/* Never wider than the content minus the wire gutters; wrapped rows leave a channel for the chip wires. */
+.chips { display: flex; justify-content: center; flex-wrap: wrap; gap: 30px 5px; max-width: calc(100% - 96px); margin: 0 auto; }
+.chip {
+  font: 500 12px var(--mono); color: var(--text-2); padding: 4px 7px; text-decoration: none;
+  border: 1px solid var(--line-2); border-radius: 6px; background: var(--chip-bg);
+  transition: border-color 0.2s, box-shadow 0.25s;
+}
+.chip:hover, .chip:focus-visible { border-color: var(--line-3); }
+.chip b { color: var(--cyan); font-weight: 600; margin-right: 5px; }
+.chip.muted b { color: var(--violet); }
+
+/* hero: the package sits on the board axis, controls share its width */
+/* 48 px gutters on each side always leave room for the logo and nav wires. */
+.hero { width: min(var(--board), 100% - 96px); margin: 30px auto 0; outline: none; }
+.package {
+  position: relative; width: fit-content; margin: 0 auto; padding: 12px;
+  border: 1px solid var(--line-2); border-radius: 14px; background: #0b0f15;
+  box-shadow: 0 20px 60px var(--shadow);
+}
+.package::before {
+  content: ''; position: absolute; top: 6px; left: 6px; width: 5px; height: 5px; border-radius: 50%;
+  background: var(--copper); opacity: 0.6;
+}
+.package.portrait { padding: 8px; border-radius: 12px; }
+.hero:focus-visible .package { border-color: var(--cyan); }
+.canvas-box { position: relative; }
+.package canvas { display: block; touch-action: manipulation; }
+/* The page is prerendered: until the hero's effect sizes the canvas, CSS holds its final box with the
+   same formula as CrossbarHero's resize (desktop when the hero is at least 666 px wide, else portrait),
+   so the text below it doesn't move when the JS arrives. The effect's inline size then takes over. */
+.hero { container-type: inline-size; }
+.package canvas { width: max(200px, min(960px, 100cqw - 26px)); aspect-ratio: 960 / 544; }
+@container (width < 666px) {
+  .package { padding: 8px; border-radius: 12px; }
+  .package canvas { width: max(200px, min(480px, 100cqw - 18px)); aspect-ratio: 400 / 668; }
+}
+canvas.is-hover { cursor: crosshair; }
+
+.hero-controls { display: flex; align-items: center; gap: 12px; margin-top: 20px; }
+.icon-btn {
+  display: grid; place-items: center; width: 36px; height: 36px; flex: none; cursor: pointer;
+  border: 1px solid var(--line-2); border-radius: 8px; background: var(--panel); color: var(--text);
+  transition: border-color 0.2s, box-shadow 0.25s;
+}
+.icon-btn:hover { border-color: var(--cyan); }
+.icon-btn svg { width: 14px; height: 14px; fill: currentColor; }
+.progress { display: flex; gap: 2px; flex: 1; height: 6px; }
+.progress-seg {
+  position: relative; flex-basis: 0; height: 100%; padding: 0; border: 0; cursor: pointer;
+  background: var(--line); border-radius: 3px; overflow: hidden; transition: background 0.2s, box-shadow 0.25s;
+}
+.progress-seg:hover { background: var(--line-2); }
+.progress-fill {
+  position: absolute; inset: 0; transform-origin: left; transform: scaleX(0);
+  background: linear-gradient(90deg, var(--cyan), var(--violet));
+}
+.text-btn {
+  flex: none; height: 36px; padding: 0 12px; cursor: pointer;
+  font: 500 13px var(--mono); color: var(--cyan);
+  border: 1px solid var(--line-2); border-radius: 8px; background: var(--panel);
+  transition: border-color 0.2s, box-shadow 0.25s;
+}
+.text-btn:hover { border-color: var(--cyan); }
+
+.caption { text-align: center; max-width: 760px; margin: 16px auto 0; font-size: 16px; line-height: 1.5; color: var(--text-3); min-height: 3em; }
+.caption span { display: inline-block; animation: fadeIn 0.2s ease; }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+.hover-card {
+  position: absolute; z-index: 5; width: 280px; padding: 10px 12px; pointer-events: none; text-align: left;
+  background: var(--panel); border: 1px solid var(--line-2); border-radius: 8px;
+  font: 500 14px/1.55 var(--mono); color: var(--text-2); box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+}
+.hover-card.docked { position: static; width: auto; margin-top: 4px; }
+.bad { color: var(--red) !important; }
+.hover-card b { color: var(--cyan); }
+.hc-line + .hc-line { margin-top: 6px; }
+.hc-k { color: var(--muted); margin-right: 4px; }
+.hc-sum { color: var(--muted); }
+.hc-sum b { color: var(--text); }
+.hc-rows { display: grid; gap: 2px; }
+.hc-rows .hc-k { display: inline-block; min-width: 3.4em; }
+
+.bits { display: inline-flex; gap: 3px; }
+.bit { display: inline-grid; place-items: center; width: 22px; height: 26px; border-radius: 3px; background: var(--bit); color: var(--faint); font: 600 14px var(--mono); }
+.bit.one { background: rgba(34, 211, 238, 0.16); color: var(--cyan); }
+.bit.parity { box-shadow: inset 0 0 0 1px var(--violet); }
+.bit.flip { background: rgba(244, 63, 94, 0.3); color: #fff; }
+
+#hero-math { margin-top: 12px; border-top: 1px solid var(--line); padding-top: 12px; text-align: left; font-size: 15px; }
+#hero-math[hidden] { display: none; }
+#hero-math dl { margin: 0; display: grid; gap: 4px; }
+#hero-math dt { font: 600 13px var(--mono); color: var(--muted); letter-spacing: 0.04em; margin-top: 8px; }
+#hero-math dd { margin: 0; font: 500 14px/1.6 var(--mono); color: var(--text-2); overflow-wrap: anywhere; }
+#hero-math dd b { color: var(--text); }
+.footnote { text-align: center; max-width: 760px; margin: 14px auto 0; font-size: 14px; line-height: 1.55; color: var(--muted); }
+
+
+/* Lit by the board: the reply pulse landed on this element. */
+[data-lit] { --lit: var(--cyan); }
+[data-lit='violet'] { --lit: var(--violet); }
+[data-lit='gold'] { --lit: var(--gold); }
+[data-lit='copper'] { --lit: var(--copper-hi); }
+[data-lit='red'] { --lit: var(--red); }
+.chip[data-lit], .icon-btn[data-lit], .text-btn[data-lit], .logo-chip[data-lit] {
+  border-color: var(--lit);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--lit) 35%, transparent), 0 0 18px color-mix(in srgb, var(--lit) 35%, transparent);
+}
+.progress-seg[data-lit] { box-shadow: 0 0 0 1px var(--lit), 0 0 14px color-mix(in srgb, var(--lit) 50%, transparent); }
+.nav-links a[data-lit] { color: var(--text); text-shadow: 0 0 12px var(--lit); }
+
+/* The longer nav (about … resume/cv + 3 icons) tightens on narrower laptops. */
+@media (max-width: 1180px) {
+  .nav-links { gap: 16px; }
+  .nav-links a { font-size: 14px; }
+}
+
+@media (max-width: 1000px) {
+  .nav-links { gap: 11px; }
+  .nav-links a { font-size: 13px; }
+  .nav-sep { display: none; }
+  .nav-links a.nav-icon { margin-right: -4px; width: 30px; height: 30px; }
+  .logo-name { font-size: 15px; }
+}
+
+/* Narrowest laptops: the logo chip stands in for the full name so the nav stays on one line. */
+@media (max-width: 860px) {
+  .logo-name { display: none; }
+}
+
+@media (max-width: 600px) {
+  .page { padding: 0 16px 40px; }
+  .nav-links { gap: 12px; }
+  .nav-links a { font-size: 14px; }
+  .nav-sep { display: none; }
+  .logo-name { display: none; }
+  .intro { text-align: left; padding-top: 20px; }
+  .kicker { margin-left: 0; }
+  h1 br { display: none; }
+  .lede { margin-left: 0; }
+  .chips { justify-content: flex-start; max-width: none; gap: 6px; }
+  .hero, .nav { width: 100%; }
+  .hero { margin-top: 24px; }
+  .icon-btn { width: 44px; height: 44px; }
+  .text-btn { height: 44px; }
+  .progress { height: 10px; }
+  .caption { font-size: 15px; }
+  .hero-controls { flex-wrap: wrap; }
+  .progress { order: 3; flex-basis: 100%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
+}

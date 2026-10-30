@@ -1,0 +1,11 @@
+# Copy to .dev.vars (git-ignored). Read by `astro dev` / `astro preview` only.
+
+# Local development: skip the Cloudflare Access check and act as this user after the local "Sign in" button.
+# Only honoured in `astro dev` (compile-time guard in src/middleware.ts); production builds have no bypass.
+DEV_USER_EMAIL=you@example.com
+
+# Production values are Cloudflare secrets (`npx wrangler secret put NAME`), never files:
+#   ACCESS_TEAM_DOMAIN   <team>.cloudflareaccess.com
+#   ACCESS_AUD           the Access application's Audience (AUD) tag
+#   ALLOWED_EMAIL        the Google account(s) that may log in, comma-separated
+#   ALLOWED_SERVICE_IDS  optional, comma-separated client ids of service tokens (job dashboard, watcher)
